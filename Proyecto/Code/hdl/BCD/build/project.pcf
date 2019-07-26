@@ -1,0 +1,27 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Thu Jul 25 20:02:20 2019
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "segs<0>" LOCATE = SITE "L6" LEVEL 1;
+COMP "segs<1>" LOCATE = SITE "M2" LEVEL 1;
+COMP "segs<2>" LOCATE = SITE "K3" LEVEL 1;
+COMP "segs<3>" LOCATE = SITE "L4" LEVEL 1;
+COMP "segs<4>" LOCATE = SITE "L5" LEVEL 1;
+COMP "segs<5>" LOCATE = SITE "N1" LEVEL 1;
+COMP "segs<6>" LOCATE = SITE "L3" LEVEL 1;
+COMP "anode<0>" LOCATE = SITE "N6" LEVEL 1;
+COMP "anode<1>" LOCATE = SITE "M6" LEVEL 1;
+COMP "anode<2>" LOCATE = SITE "M3" LEVEL 1;
+COMP "anode<3>" LOCATE = SITE "N5" LEVEL 1;
+COMP "n<0>" LOCATE = SITE "U9" LEVEL 1;
+COMP "anode<4>" LOCATE = SITE "N2" LEVEL 1;
+COMP "n<1>" LOCATE = SITE "U8" LEVEL 1;
+COMP "anode<5>" LOCATE = SITE "N4" LEVEL 1;
+COMP "n<2>" LOCATE = SITE "R7" LEVEL 1;
+COMP "anode<6>" LOCATE = SITE "L1" LEVEL 1;
+COMP "n<3>" LOCATE = SITE "R6" LEVEL 1;
+COMP "anode<7>" LOCATE = SITE "M1" LEVEL 1;
+COMP "init" LOCATE = SITE "P4" LEVEL 1;
+SCHEMATIC END;
+

@@ -1,0 +1,1965 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "project.src"
+Input Format                       : mixed
+
+---- Target Parameters
+Target Device                      : xc7a100t-3csg324
+Output File Name                   : "project.ngc"
+Output Format                      : NGC
+
+---- Source Options
+Top Module Name                    : j1soc
+
+---- General Options
+Optimization Goal                  : Area
+Optimization Effort                : 1
+RTL Output                         : yes
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/j1soc.v" into library work
+Parsing module <j1soc>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/j1/j1.v" into library work
+Parsing module <j1>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/j1/dp_ram.v" into library work
+Parsing module <dp_ram>.
+INFO:HDLCompiler:693 - "/home/cychitivav/Downloads/Digital/Code/hdl/j1/dp_ram.v" Line 19. parameter declaration becomes local in dp_ram with formal parameter declaration list
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/dpRAM/core_peripheric.v" into library work
+Parsing module <core_peripheric>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/dpRAM/dpRAM_interface.v" into library work
+Parsing module <dpRAM_interface>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/dpRAM/dualport_RAM.v" into library work
+Parsing module <dualport_RAM>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/I2S/comparator0.v" into library work
+Parsing module <comparator0>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/I2S/counter.v" into library work
+Parsing module <counter>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/I2S/divisor.v" into library work
+Parsing module <divisor>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/I2S/shift.v" into library work
+Parsing module <shift>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/I2S/fifo.v" into library work
+Parsing module <fifo>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/I2S/comparator16.v" into library work
+Parsing module <comparator16>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/I2S/I2S.v" into library work
+Parsing module <I2S>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/I2S/SimI2S.v" into library work
+Parsing module <SimI2S>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/I2S/peripheral_i2s.v" into library work
+Parsing module <peripheral_i2s>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/UART/peripheral_uart.v" into library work
+Parsing module <peripheral_uart>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/UART/UART.v" into library work
+Parsing module <UART>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/UART/baudgen.v" into library work
+Parsing verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/UART/baudgen.vh" included at line 2.
+Parsing module <baudgen>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/UART/uart_tx.v" into library work
+Parsing verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/UART/baudgen.vh" included at line 6.
+Parsing module <uart_tx>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/UART/baudgen_rx.v" into library work
+Parsing verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/UART/baudgen.vh" included at line 2.
+Parsing module <baudgen_rx>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/UART/uart_rx.v" into library work
+Parsing verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/UART/baudgen.vh" included at line 4.
+Parsing module <uart_rx>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/BCD/peripheral_bcd.v" into library work
+Parsing module <peripheral_bcd>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/BCD/BCD.v" into library work
+Parsing module <BCD>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/BOARD/peripheral_board.v" into library work
+Parsing module <peripheral_board>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/BOARD/board.v" into library work
+Parsing module <board>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/BOARD/sweep.v" into library work
+Parsing module <sweep>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <j1soc>.
+
+Elaborating module <j1(bootram_file="../firmware/j1.mem")>.
+
+Elaborating module <dp_ram(adr_width=13,dat_width=16,mem_file_name="../firmware/j1.mem")>.
+Reading initialization file \"home/cychitivav/Downloads/Digital/Code/hdl/../firmware/j1.mem\".
+WARNING:HDLCompiler:189 - "/home/cychitivav/Downloads/Digital/Code/hdl/j1/j1.v" Line 36: Size mismatch in connection of port <en_b>. Formal port size is 1-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/j1/j1.v" Line 73: Result of 32-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/j1/j1.v" Line 99: Result of 6-bit expression is truncated to fit in 5-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/j1/j1.v" Line 113: Result of 32-bit expression is truncated to fit in 5-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/j1/j1.v" Line 120: Result of 6-bit expression is truncated to fit in 5-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/j1/j1.v" Line 135: Result of 15-bit expression is truncated to fit in 13-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/j1/j1.v" Line 136: Result of 16-bit expression is truncated to fit in 13-bit target.
+
+Elaborating module <dpRAM_interface>.
+
+Elaborating module <dualport_RAM>.
+
+Elaborating module <core_peripheric>.
+
+Elaborating module <peripheral_i2s>.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/I2S/peripheral_i2s.v" Line 18: Result of 32-bit expression is truncated to fit in 5-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/I2S/peripheral_i2s.v" Line 19: Result of 32-bit expression is truncated to fit in 5-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/I2S/peripheral_i2s.v" Line 20: Result of 32-bit expression is truncated to fit in 5-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/I2S/peripheral_i2s.v" Line 22: Result of 32-bit expression is truncated to fit in 5-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/I2S/peripheral_i2s.v" Line 23: Result of 32-bit expression is truncated to fit in 5-bit target.
+
+Elaborating module <SimI2S>.
+
+Elaborating module <I2S>.
+
+Elaborating module <divisor>.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/I2S/divisor.v" Line 9: Result of 8-bit expression is truncated to fit in 7-bit target.
+
+Elaborating module <shift>.
+
+Elaborating module <counter>.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/I2S/counter.v" Line 9: Result of 32-bit expression is truncated to fit in 5-bit target.
+
+Elaborating module <comparator0>.
+
+Elaborating module <comparator16>.
+
+Elaborating module <fifo>.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/I2S/fifo.v" Line 50: Result of 8-bit expression is truncated to fit in 7-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/I2S/fifo.v" Line 61: Result of 8-bit expression is truncated to fit in 7-bit target.
+
+Elaborating module <peripheral_uart>.
+
+Elaborating module <UART>.
+
+Elaborating module <uart_tx>.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/UART/uart_tx.v" Line 81: Result of 5-bit expression is truncated to fit in 4-bit target.
+
+Elaborating module <baudgen(M=10417)>.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/UART/baudgen.v" Line 31: Result of 32-bit expression is truncated to fit in 14-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/UART/baudgen.v" Line 39: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/UART/uart_tx.v" Line 149: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/UART/uart_tx.v" Line 150: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/UART/uart_tx.v" Line 154: Result of 32-bit expression is truncated to fit in 1-bit target.
+
+Elaborating module <uart_rx>.
+
+Elaborating module <baudgen_rx(M=10417)>.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/UART/baudgen_rx.v" Line 34: Result of 32-bit expression is truncated to fit in 14-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/UART/baudgen_rx.v" Line 42: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/UART/uart_rx.v" Line 52: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/UART/uart_rx.v" Line 120: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/UART/uart_rx.v" Line 121: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/UART/uart_rx.v" Line 122: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/UART/uart_rx.v" Line 123: Result of 32-bit expression is truncated to fit in 1-bit target.
+
+Elaborating module <peripheral_board>.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/BOARD/peripheral_board.v" Line 17: Result of 32-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/BOARD/peripheral_board.v" Line 19: Result of 32-bit expression is truncated to fit in 2-bit target.
+
+Elaborating module <board>.
+
+Elaborating module <sweep>.
+
+Elaborating module <peripheral_bcd>.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/BCD/peripheral_bcd.v" Line 18: Result of 32-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/BCD/peripheral_bcd.v" Line 19: Result of 32-bit expression is truncated to fit in 2-bit target.
+
+Elaborating module <BCD>.
+WARNING:HDLCompiler:634 - "/home/cychitivav/Downloads/Digital/Code/hdl/j1soc.v" Line 25: Net <i2c_dout[15]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cychitivav/Downloads/Digital/Code/hdl/j1soc.v" Line 26: Net <spi_dout[15]> does not have a driver.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <j1soc>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/j1soc.v".
+        bootram_file = "../firmware/j1.mem"
+WARNING:Xst:653 - Signal <i2c_dout> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <spi_dout> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <uart_tx> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Summary:
+	no macro.
+Unit <j1soc> synthesized.
+
+Synthesizing Unit <j1>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/j1/j1.v".
+        bootram_file = "../firmware/j1.mem"
+    Found 32x16-bit dual-port RAM <Mram_dstack> for signal <dstack>.
+    Found 32x16-bit dual-port RAM <Mram_rstack> for signal <rstack>.
+    Found 5-bit register for signal <dsp>.
+    Found 16-bit register for signal <st0>.
+    Found 5-bit register for signal <rsp>.
+    Found 13-bit register for signal <pc>.
+    Found 14-bit adder for signal <n0144[13:0]> created at line 34.
+    Found 16-bit adder for signal <st0[15]_st1[15]_add_11_OUT> created at line 65.
+    Found 5-bit adder for signal <dsp[4]_GND_2_o_add_33_OUT> created at line 99.
+    Found 5-bit adder for signal <dsp[4]_dd[1]_add_34_OUT> created at line 105.
+    Found 5-bit adder for signal <rsp[4]_rd[1]_add_35_OUT> created at line 106.
+    Found 5-bit adder for signal <rsp[4]_GND_2_o_add_40_OUT> created at line 120.
+    Found 16-bit subtractor for signal <GND_2_o_GND_2_o_sub_20_OUT<15:0>> created at line 73.
+    Found 5-bit subtractor for signal <GND_2_o_GND_2_o_sub_38_OUT<4:0>> created at line 113.
+    Found 16-bit shifter logical right for signal <st1[15]_st0[3]_shift_right_18_OUT> created at line 72
+    Found 16-bit shifter logical left for signal <st1[15]_st0[3]_shift_left_22_OUT> created at line 76
+    Found 16-bit 16-to-1 multiplexer for signal <st0sel[3]_st1[15]_wide_mux_24_OUT> created at line 62.
+    Found 5-bit 4-to-1 multiplexer for signal <_n0188> created at line 110.
+    Found 5-bit 3-to-1 multiplexer for signal <_n0190> created at line 110.
+    Found 16-bit 3-to-1 multiplexer for signal <_n0192> created at line 110.
+    Found 16-bit comparator equal for signal <st1[15]_st0[15]_equal_17_o> created at line 70
+    Found 16-bit comparator greater for signal <st0[15]_st1[15]_LessThan_18_o> created at line 71
+    Found 16-bit comparator greater for signal <st1[15]_st0[15]_LessThan_24_o> created at line 78
+    Summary:
+	inferred   2 RAM(s).
+	inferred   5 Adder/Subtractor(s).
+	inferred  39 D-type flip-flop(s).
+	inferred   3 Comparator(s).
+	inferred  41 Multiplexer(s).
+	inferred   2 Combinational logic shifter(s).
+Unit <j1> synthesized.
+
+Synthesizing Unit <dp_ram>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/j1/dp_ram.v".
+        adr_width = 13
+        dat_width = 16
+        mem_file_name = "../firmware/j1.mem"
+    Found 8192x16-bit dual-port RAM <Mram_ram> for signal <ram>.
+    Found 16-bit register for signal <dat_a_out>.
+    Found 16-bit register for signal <dat_b>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred  32 D-type flip-flop(s).
+Unit <dp_ram> synthesized.
+
+Synthesizing Unit <dpRAM_interface>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/dpRAM/dpRAM_interface.v".
+    Summary:
+	no macro.
+Unit <dpRAM_interface> synthesized.
+
+Synthesizing Unit <dualport_RAM>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/dpRAM/dualport_RAM.v".
+    Found 256x16-bit dual-port RAM <Mram_ram> for signal <ram>.
+    Found 16-bit register for signal <d_out_2>.
+    Found 16-bit register for signal <d_out_1>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred  32 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <dualport_RAM> synthesized.
+
+Synthesizing Unit <core_peripheric>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/dpRAM/core_peripheric.v".
+    Found 16-bit register for signal <F_2>.
+    Found 16-bit register for signal <F_3>.
+    Found 16-bit register for signal <F_4>.
+    Found 16-bit register for signal <F_5>.
+    Found 16-bit register for signal <F_6>.
+    Found 4-bit register for signal <estado>.
+    Found 16-bit register for signal <F_1>.
+    Found finite state machine <FSM_0> for signal <estado>.
+    -----------------------------------------------------------------------
+    | States             | 14                                             |
+    | Transitions        | 15                                             |
+    | Inputs             | 1                                              |
+    | Outputs            | 9                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Power Up State     | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred  96 D-type flip-flop(s).
+	inferred  10 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <core_peripheric> synthesized.
+
+Synthesizing Unit <peripheral_i2s>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/I2S/peripheral_i2s.v".
+        nBits = 32
+        inouts = 5
+        tamPro = 16
+        tamAddr = 4
+    Found 32-bit register for signal <data>.
+    Found 1-bit register for signal <dout<15>>.
+    Found 1-bit register for signal <dout<14>>.
+    Found 1-bit register for signal <dout<13>>.
+    Found 1-bit register for signal <dout<12>>.
+    Found 1-bit register for signal <dout<11>>.
+    Found 1-bit register for signal <dout<10>>.
+    Found 1-bit register for signal <dout<9>>.
+    Found 1-bit register for signal <dout<8>>.
+    Found 1-bit register for signal <dout<7>>.
+    Found 1-bit register for signal <dout<6>>.
+    Found 1-bit register for signal <dout<5>>.
+    Found 1-bit register for signal <dout<4>>.
+    Found 1-bit register for signal <dout<3>>.
+    Found 1-bit register for signal <dout<2>>.
+    Found 1-bit register for signal <dout<1>>.
+    Found 1-bit register for signal <dout<0>>.
+    Found 1-bit register for signal <load>.
+    Found 5-bit 7-to-1 multiplexer for signal <_n0077> created at line 9.
+    Summary:
+	inferred  49 D-type flip-flop(s).
+	inferred   4 Multiplexer(s).
+Unit <peripheral_i2s> synthesized.
+
+Synthesizing Unit <SimI2S>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/I2S/SimI2S.v".
+        nBits = 32
+    Summary:
+	no macro.
+Unit <SimI2S> synthesized.
+
+Synthesizing Unit <I2S>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/I2S/I2S.v".
+        nBits = 32
+    Summary:
+	no macro.
+Unit <I2S> synthesized.
+
+Synthesizing Unit <divisor>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/I2S/divisor.v".
+        fin = 100000000
+        fout = 1411200
+    Found 1-bit register for signal <clko>.
+    Found 7-bit register for signal <count>.
+    Found 7-bit adder for signal <_n0018> created at line 9.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   8 D-type flip-flop(s).
+Unit <divisor> synthesized.
+
+Synthesizing Unit <shift>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/I2S/shift.v".
+        nBits = 32
+    Found 1-bit register for signal <tmp<31>>.
+    Found 1-bit register for signal <tmp<30>>.
+    Found 1-bit register for signal <tmp<29>>.
+    Found 1-bit register for signal <tmp<28>>.
+    Found 1-bit register for signal <tmp<27>>.
+    Found 1-bit register for signal <tmp<26>>.
+    Found 1-bit register for signal <tmp<25>>.
+    Found 1-bit register for signal <tmp<24>>.
+    Found 1-bit register for signal <tmp<23>>.
+    Found 1-bit register for signal <tmp<22>>.
+    Found 1-bit register for signal <tmp<21>>.
+    Found 1-bit register for signal <tmp<20>>.
+    Found 1-bit register for signal <tmp<19>>.
+    Found 1-bit register for signal <tmp<18>>.
+    Found 1-bit register for signal <tmp<17>>.
+    Found 1-bit register for signal <tmp<16>>.
+    Found 1-bit register for signal <tmp<15>>.
+    Found 1-bit register for signal <tmp<14>>.
+    Found 1-bit register for signal <tmp<13>>.
+    Found 1-bit register for signal <tmp<12>>.
+    Found 1-bit register for signal <tmp<11>>.
+    Found 1-bit register for signal <tmp<10>>.
+    Found 1-bit register for signal <tmp<9>>.
+    Found 1-bit register for signal <tmp<8>>.
+    Found 1-bit register for signal <tmp<7>>.
+    Found 1-bit register for signal <tmp<6>>.
+    Found 1-bit register for signal <tmp<5>>.
+    Found 1-bit register for signal <tmp<4>>.
+    Found 1-bit register for signal <tmp<3>>.
+    Found 1-bit register for signal <tmp<2>>.
+    Found 1-bit register for signal <tmp<1>>.
+    Found 1-bit register for signal <tmp<0>>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+Unit <shift> synthesized.
+
+Synthesizing Unit <counter>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/I2S/counter.v".
+        nBits = 32
+    Found 5-bit register for signal <num>.
+    Found 5-bit subtractor for signal <GND_12_o_GND_12_o_sub_2_OUT<4:0>> created at line 9.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   5 D-type flip-flop(s).
+Unit <counter> synthesized.
+
+Synthesizing Unit <comparator0>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/I2S/comparator0.v".
+        nBits = 32
+    Summary:
+	no macro.
+Unit <comparator0> synthesized.
+
+Synthesizing Unit <comparator16>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/I2S/comparator16.v".
+        nBits = 32
+    Found 5-bit comparator lessequal for signal <x[4]_PWR_16_o_LessThan_1_o> created at line 6
+    Summary:
+	inferred   1 Comparator(s).
+Unit <comparator16> synthesized.
+
+Synthesizing Unit <fifo>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/I2S/fifo.v".
+        nBits = 32
+        dataMax = 100
+        file = "none"
+WARNING:Xst:3035 - Index value(s) does not match array range for signal <fifo>, simulation mismatch.
+    Found 100x32-bit dual-port RAM <Mram_fifo> for signal <fifo>.
+    Found 7-bit register for signal <p_out>.
+    Found 7-bit register for signal <p_in>.
+    Found 32-bit register for signal <dataOut>.
+    Found 8-bit adder for signal <_n0052> created at line 40.
+    Found 7-bit adder for signal <p_out[6]_GND_15_o_add_12_OUT> created at line 61.
+    Found 8-bit comparator equal for signal <GND_15_o_GND_15_o_equal_6_o> created at line 40
+    Summary:
+	inferred   1 RAM(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  46 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   5 Multiplexer(s).
+Unit <fifo> synthesized.
+
+Synthesizing Unit <peripheral_uart>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/UART/peripheral_uart.v".
+WARNING:Xst:647 - Input <d_in<15:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <start>.
+    Found 1-bit register for signal <d_out<15>>.
+    Found 1-bit register for signal <d_out<14>>.
+    Found 1-bit register for signal <d_out<13>>.
+    Found 1-bit register for signal <d_out<12>>.
+    Found 1-bit register for signal <d_out<11>>.
+    Found 1-bit register for signal <d_out<10>>.
+    Found 1-bit register for signal <d_out<9>>.
+    Found 1-bit register for signal <d_out<8>>.
+    Found 1-bit register for signal <d_out<7>>.
+    Found 1-bit register for signal <d_out<6>>.
+    Found 1-bit register for signal <d_out<5>>.
+    Found 1-bit register for signal <d_out<4>>.
+    Found 1-bit register for signal <d_out<3>>.
+    Found 1-bit register for signal <d_out<2>>.
+    Found 1-bit register for signal <d_out<1>>.
+    Found 1-bit register for signal <d_out<0>>.
+    Found 8-bit register for signal <data_tx>.
+    Found 5-bit 7-to-1 multiplexer for signal <_n0077> created at line 17.
+    Summary:
+	inferred  25 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <peripheral_uart> synthesized.
+
+Synthesizing Unit <UART>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/UART/UART.v".
+    Summary:
+	no macro.
+Unit <UART> synthesized.
+
+Synthesizing Unit <uart_tx>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/UART/uart_tx.v".
+        BAUD = 10417
+    Found 8-bit register for signal <data_r>.
+    Found 10-bit register for signal <shifter>.
+    Found 4-bit register for signal <bitc>.
+    Found 1-bit register for signal <tx>.
+    Found 2-bit register for signal <state>.
+    Found 1-bit register for signal <start_r>.
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rstn (positive)                                |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 4-bit adder for signal <bitc[3]_GND_18_o_add_19_OUT> created at line 81.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  24 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <uart_tx> synthesized.
+
+Synthesizing Unit <baudgen>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/UART/baudgen.v".
+        M = 10417
+    Found 14-bit register for signal <divcounter>.
+    Found 15-bit adder for signal <n0017[14:0]> created at line 31.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  14 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
+Unit <baudgen> synthesized.
+
+Synthesizing Unit <uart_rx>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/UART/uart_rx.v".
+        BAUD = 10417
+    Found 4-bit register for signal <bitc>.
+    Found 10-bit register for signal <raw_data>.
+    Found 8-bit register for signal <data>.
+    Found 2-bit register for signal <state>.
+    Found finite state machine <FSM_2> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rstn (positive)                                |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 4-bit adder for signal <bitc[3]_GND_20_o_add_4_OUT> created at line 52.
+    WARNING:Xst:2404 -  FFs/Latches <rx_r<0:0>> (without init value) have a constant value of 0 in block <uart_rx>.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  22 D-type flip-flop(s).
+	inferred   1 Finite State Machine(s).
+Unit <uart_rx> synthesized.
+
+Synthesizing Unit <baudgen_rx>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/UART/baudgen_rx.v".
+        M = 10417
+    Found 14-bit register for signal <divcounter>.
+    Found 15-bit adder for signal <n0017[14:0]> created at line 34.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  14 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
+Unit <baudgen_rx> synthesized.
+
+Synthesizing Unit <peripheral_board>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/BOARD/peripheral_board.v".
+        inouts = 2
+        tamPro = 16
+        tamAddr = 4
+WARNING:Xst:647 - Input <din<15:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <dout<15>>.
+    Found 1-bit register for signal <dout<14>>.
+    Found 1-bit register for signal <dout<13>>.
+    Found 1-bit register for signal <dout<12>>.
+    Found 1-bit register for signal <dout<11>>.
+    Found 1-bit register for signal <dout<10>>.
+    Found 1-bit register for signal <dout<9>>.
+    Found 1-bit register for signal <dout<8>>.
+    Found 1-bit register for signal <dout<7>>.
+    Found 1-bit register for signal <dout<6>>.
+    Found 1-bit register for signal <dout<5>>.
+    Found 1-bit register for signal <dout<4>>.
+    Found 1-bit register for signal <dout<3>>.
+    Found 1-bit register for signal <dout<2>>.
+    Found 1-bit register for signal <dout<1>>.
+    Found 1-bit register for signal <dout<0>>.
+    Found 1-bit register for signal <init>.
+    Summary:
+	inferred  17 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <peripheral_board> synthesized.
+
+Synthesizing Unit <board>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/BOARD/board.v".
+WARNING:Xst:737 - Found 1-bit latch for signal <n<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <n<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <n<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <n<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred   4 Latch(s).
+	inferred  48 Multiplexer(s).
+Unit <board> synthesized.
+
+Synthesizing Unit <sweep>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/BOARD/sweep.v".
+    Found 4-bit register for signal <out>.
+    Found 33-bit register for signal <count>.
+    Found 33-bit adder for signal <count[32]_GND_24_o_add_1_OUT> created at line 9.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  37 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <sweep> synthesized.
+
+Synthesizing Unit <peripheral_bcd>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/BCD/peripheral_bcd.v".
+        inouts = 2
+        tamPro = 16
+        tamAddr = 4
+WARNING:Xst:647 - Input <din<15:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <rd> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:653 - Signal <dout> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 4-bit register for signal <n>.
+    Found 1-bit register for signal <init>.
+    Summary:
+	inferred   5 D-type flip-flop(s).
+Unit <peripheral_bcd> synthesized.
+
+Synthesizing Unit <BCD>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/BCD/BCD.v".
+WARNING:Xst:737 - Found 1-bit latch for signal <segs<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <segs<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <segs<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <segs<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <segs<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <segs<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <segs<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred   7 Latch(s).
+Unit <BCD> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 5
+ 100x32-bit dual-port RAM                              : 1
+ 256x16-bit dual-port RAM                              : 1
+ 32x16-bit dual-port RAM                               : 2
+ 8192x16-bit dual-port RAM                             : 1
+# Adders/Subtractors                                   : 14
+ 14-bit adder                                          : 1
+ 15-bit adder                                          : 2
+ 16-bit addsub                                         : 1
+ 33-bit adder                                          : 1
+ 4-bit adder                                           : 2
+ 5-bit adder                                           : 2
+ 5-bit addsub                                          : 1
+ 5-bit subtractor                                      : 1
+ 7-bit adder                                           : 2
+ 8-bit adder                                           : 1
+# Registers                                            : 74
+ 1-bit register                                        : 39
+ 10-bit register                                       : 2
+ 13-bit register                                       : 1
+ 14-bit register                                       : 2
+ 16-bit register                                       : 14
+ 32-bit register                                       : 2
+ 33-bit register                                       : 1
+ 4-bit register                                        : 4
+ 5-bit register                                        : 3
+ 7-bit register                                        : 3
+ 8-bit register                                        : 3
+# Latches                                              : 11
+ 1-bit latch                                           : 11
+# Comparators                                          : 5
+ 16-bit comparator equal                               : 1
+ 16-bit comparator greater                             : 2
+ 5-bit comparator lessequal                            : 1
+ 8-bit comparator equal                                : 1
+# Multiplexers                                         : 121
+ 1-bit 2-to-1 multiplexer                              : 51
+ 10-bit 2-to-1 multiplexer                             : 1
+ 13-bit 2-to-1 multiplexer                             : 3
+ 14-bit 2-to-1 multiplexer                             : 2
+ 16-bit 2-to-1 multiplexer                             : 38
+ 16-bit 3-to-1 multiplexer                             : 1
+ 32-bit 2-to-1 multiplexer                             : 4
+ 4-bit 2-to-1 multiplexer                              : 8
+ 5-bit 2-to-1 multiplexer                              : 9
+ 5-bit 7-to-1 multiplexer                              : 2
+ 7-bit 2-to-1 multiplexer                              : 2
+# Logic shifters                                       : 2
+ 16-bit shifter logical left                           : 1
+ 16-bit shifter logical right                          : 1
+# FSMs                                                 : 3
+# Xors                                                 : 1
+ 16-bit xor2                                           : 1
+
+=========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1710 - FF/Latch <raw_data_9> (without init value) has a constant value of 0 in block <RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <raw_data_8> (without init value) has a constant value of 0 in block <RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_7> (without init value) has a constant value of 0 in block <RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <raw_data_7> (without init value) has a constant value of 0 in block <RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <raw_data_6> (without init value) has a constant value of 0 in block <RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_6> (without init value) has a constant value of 0 in block <RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <raw_data_5> (without init value) has a constant value of 0 in block <RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_5> (without init value) has a constant value of 0 in block <RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <raw_data_4> (without init value) has a constant value of 0 in block <RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_4> (without init value) has a constant value of 0 in block <RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <raw_data_3> (without init value) has a constant value of 0 in block <RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_3> (without init value) has a constant value of 0 in block <RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <raw_data_2> (without init value) has a constant value of 0 in block <RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_2> (without init value) has a constant value of 0 in block <RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_1> (without init value) has a constant value of 0 in block <RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <raw_data_1> (without init value) has a constant value of 0 in block <RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_0> (without init value) has a constant value of 0 in block <RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <raw_data_0> of sequential type is unconnected in block <RX>.
+WARNING:Xst:2404 -  FFs/Latches <raw_data<9:0>> (without init value) have a constant value of 0 in block <uart_rx>.
+WARNING:Xst:2404 -  FFs/Latches <data<7:0>> (without init value) have a constant value of 0 in block <uart_rx>.
+
+Synthesizing (advanced) Unit <counter>.
+The following registers are absorbed into counter <num>: 1 register on signal <num>.
+Unit <counter> synthesized (advanced).
+
+Synthesizing (advanced) Unit <divisor>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <divisor> synthesized (advanced).
+
+Synthesizing (advanced) Unit <dualport_RAM>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_ram> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 16-bit                   |          |
+    |     clkA           | connected to signal <clk>           | fall     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <addr_1>        |          |
+    |     diA            | connected to signal <d_in_1>        |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 256-word x 16-bit                   |          |
+    |     clkB           | connected to signal <clk>           | fall     |
+    |     weB            | connected to internal node          | high     |
+    |     addrB          | connected to signal <addr_2>        |          |
+    |     diB            | connected to signal <d_in_2>        |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <dualport_RAM> synthesized (advanced).
+
+Synthesizing (advanced) Unit <fifo>.
+The following registers are absorbed into counter <p_out>: 1 register on signal <p_out>.
+INFO:Xst:3226 - The RAM <Mram_fifo> will be implemented as a BLOCK RAM, absorbing the following register(s): <dataOut>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 100-word x 32-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <R>             | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <p_in>          |          |
+    |     diA            | connected to signal <dataIn>        |          |
+    -----------------------------------------------------------------------
+    | optimization       | area                                |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 100-word x 32-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <W>             | fall     |
+    |     enB            | connected to signal <rst>           | low      |
+    |     addrB          | connected to signal <p_out>         |          |
+    |     doB            | connected to signal <dataOut>       |          |
+    -----------------------------------------------------------------------
+    | optimization       | area                                |          |
+    -----------------------------------------------------------------------
+Unit <fifo> synthesized (advanced).
+
+Synthesizing (advanced) Unit <j1>.
+The following registers are absorbed into counter <dsp>: 1 register on signal <dsp>.
+INFO:Xst:3226 - The RAM <Mram_rstack> will be implemented as a BLOCK RAM, absorbing the following register(s): <rsp>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 16-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <sys_clk_i>     | rise     |
+    |     weA            | connected to signal <_rstkW>        | high     |
+    |     addrA          | connected to signal <_rsp>          |          |
+    |     diA            | connected to signal <_rstkD>        |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | optimization       | area                                |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3226 - The RAM <ram0/Mram_ram> will be implemented as a BLOCK RAM, absorbing the following register(s): <ram0/dat_a_out> <ram0/dat_b>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8192-word x 16-bit                  |          |
+    |     mode           | no-change                           |          |
+    |     clkA           | connected to signal <sys_clk_i>     | rise     |
+    |     enA            | connected to internal node          | low      |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <st0<13:1>>     |          |
+    |     diA            | connected to signal <io_dout>       |          |
+    |     doA            | connected to signal <ramrd>         |          |
+    -----------------------------------------------------------------------
+    | optimization       | area                                |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 8192-word x 16-bit                  |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <sys_clk_i>     | rise     |
+    |     addrB          | connected to signal <_pc>           |          |
+    |     doB            | connected to signal <insn>          |          |
+    -----------------------------------------------------------------------
+    | optimization       | area                                |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_dstack> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 16-bit                    |          |
+    |     clkA           | connected to signal <sys_clk_i>     | rise     |
+    |     weA            | connected to signal <_dstkW>        | high     |
+    |     addrA          | connected to signal <_dsp>          |          |
+    |     diA            | connected to signal <st0>           |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 32-word x 16-bit                    |          |
+    |     addrB          | connected to signal <dsp>           |          |
+    |     doB            | connected to signal <io_dout>       |          |
+    -----------------------------------------------------------------------
+Unit <j1> synthesized (advanced).
+
+Synthesizing (advanced) Unit <sweep>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <sweep> synthesized (advanced).
+
+Synthesizing (advanced) Unit <uart_rx>.
+The following registers are absorbed into counter <bitc>: 1 register on signal <bitc>.
+Unit <uart_rx> synthesized (advanced).
+
+Synthesizing (advanced) Unit <uart_tx>.
+The following registers are absorbed into counter <bitc>: 1 register on signal <bitc>.
+Unit <uart_tx> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 5
+ 100x32-bit dual-port block RAM                        : 1
+ 256x16-bit dual-port distributed RAM                  : 1
+ 32x16-bit dual-port distributed RAM                   : 1
+ 32x16-bit single-port block RAM                       : 1
+ 8192x16-bit dual-port block RAM                       : 1
+# Adders/Subtractors                                   : 10
+ 14-bit adder                                          : 1
+ 15-bit adder                                          : 2
+ 16-bit addsub                                         : 1
+ 33-bit adder                                          : 1
+ 5-bit adder                                           : 2
+ 5-bit addsub                                          : 1
+ 7-bit adder                                           : 1
+ 8-bit adder                                           : 1
+# Counters                                             : 7
+ 33-bit up counter                                     : 1
+ 4-bit up counter                                      : 2
+ 5-bit down counter                                    : 1
+ 5-bit up counter                                      : 1
+ 7-bit up counter                                      : 2
+# Registers                                            : 350
+ Flip-Flops                                            : 350
+# Comparators                                          : 5
+ 16-bit comparator equal                               : 1
+ 16-bit comparator greater                             : 2
+ 5-bit comparator lessequal                            : 1
+ 8-bit comparator equal                                : 1
+# Multiplexers                                         : 162
+ 1-bit 2-to-1 multiplexer                              : 96
+ 10-bit 2-to-1 multiplexer                             : 1
+ 13-bit 2-to-1 multiplexer                             : 2
+ 14-bit 2-to-1 multiplexer                             : 2
+ 16-bit 2-to-1 multiplexer                             : 36
+ 16-bit 3-to-1 multiplexer                             : 1
+ 32-bit 2-to-1 multiplexer                             : 4
+ 4-bit 2-to-1 multiplexer                              : 8
+ 5-bit 2-to-1 multiplexer                              : 9
+ 5-bit 7-to-1 multiplexer                              : 2
+ 7-bit 2-to-1 multiplexer                              : 1
+# Logic shifters                                       : 2
+ 16-bit shifter logical left                           : 1
+ 16-bit shifter logical right                          : 1
+# FSMs                                                 : 3
+# Xors                                                 : 1
+ 16-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <dout_1> (without init value) has a constant value of 0 in block <peripheral_i2s>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dout_2> (without init value) has a constant value of 0 in block <peripheral_i2s>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dout_3> (without init value) has a constant value of 0 in block <peripheral_i2s>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dout_4> (without init value) has a constant value of 0 in block <peripheral_i2s>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dout_5> (without init value) has a constant value of 0 in block <peripheral_i2s>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dout_6> (without init value) has a constant value of 0 in block <peripheral_i2s>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dout_7> (without init value) has a constant value of 0 in block <peripheral_i2s>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dout_8> (without init value) has a constant value of 0 in block <peripheral_i2s>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dout_9> (without init value) has a constant value of 0 in block <peripheral_i2s>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dout_10> (without init value) has a constant value of 0 in block <peripheral_i2s>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dout_11> (without init value) has a constant value of 0 in block <peripheral_i2s>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dout_12> (without init value) has a constant value of 0 in block <peripheral_i2s>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dout_13> (without init value) has a constant value of 0 in block <peripheral_i2s>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dout_14> (without init value) has a constant value of 0 in block <peripheral_i2s>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dout_15> (without init value) has a constant value of 0 in block <peripheral_i2s>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <d_out_1> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_out_2> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_out_3> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_out_4> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_out_5> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_out_6> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_out_7> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_out_8> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_out_9> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_out_10> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_out_11> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_out_12> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_out_13> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_out_14> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_out_15> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <dpRm/c_p/FSM_0> on signal <estado[1:4]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 0000
+ 0001  | 0001
+ 0010  | 0010
+ 0011  | 0011
+ 0100  | 0100
+ 0101  | 0101
+ 0110  | 0110
+ 0111  | 0111
+ 1000  | 1000
+ 1001  | 1001
+ 1010  | 1010
+ 1011  | 1011
+ 1100  | 1100
+ 1101  | 1101
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <per_uart/FSM_2> on signal <state[1:4]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 0001
+ 01    | 0010
+ 10    | 0100
+ 11    | 1000
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <per_uart/UART/TX/FSM_1> on signal <state[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 11
+-------------------
+WARNING:Xst:1710 - FF/Latch <dout_4> (without init value) has a constant value of 0 in block <peripheral_board>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dout_5> (without init value) has a constant value of 0 in block <peripheral_board>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dout_6> (without init value) has a constant value of 0 in block <peripheral_board>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dout_7> (without init value) has a constant value of 0 in block <peripheral_board>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dout_8> (without init value) has a constant value of 0 in block <peripheral_board>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dout_9> (without init value) has a constant value of 0 in block <peripheral_board>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dout_10> (without init value) has a constant value of 0 in block <peripheral_board>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dout_11> (without init value) has a constant value of 0 in block <peripheral_board>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dout_12> (without init value) has a constant value of 0 in block <peripheral_board>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dout_13> (without init value) has a constant value of 0 in block <peripheral_board>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dout_14> (without init value) has a constant value of 0 in block <peripheral_board>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dout_15> (without init value) has a constant value of 0 in block <peripheral_board>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:3001 - This design contains one or more registers or latches with an active
+   asynchronous set and asynchronous reset. While this circuit can be built,
+   it creates a sub-optimal implementation in terms of area, power and
+   performance. For a more optimal implementation Xilinx highly recommends
+   one of the following:
+
+          1) Remove either the set or reset from all registers and latches if
+             not needed for required functionality
+          2) Modify the code in order to produce a synchronous set
+             and/or reset (both is preferred)
+          3) Use the -async_to_sync option to transform the asynchronous
+             set/reset to synchronous operation
+             (timing simulation highly recommended when using this option)
+
+  Please refer to http://www.xilinx.com search string "Artix7 asynchronous set/reset" for more details.
+
+  List of register instances with asynchronous set and reset:
+    tmp_31 in unit <shift>
+    tmp_30 in unit <shift>
+    tmp_29 in unit <shift>
+    tmp_28 in unit <shift>
+    tmp_27 in unit <shift>
+    tmp_26 in unit <shift>
+    tmp_25 in unit <shift>
+    tmp_24 in unit <shift>
+    tmp_23 in unit <shift>
+    tmp_22 in unit <shift>
+    tmp_21 in unit <shift>
+    tmp_20 in unit <shift>
+    tmp_19 in unit <shift>
+    tmp_18 in unit <shift>
+    tmp_17 in unit <shift>
+    tmp_16 in unit <shift>
+    tmp_15 in unit <shift>
+    tmp_14 in unit <shift>
+    tmp_13 in unit <shift>
+    tmp_12 in unit <shift>
+    tmp_11 in unit <shift>
+    tmp_10 in unit <shift>
+    tmp_9 in unit <shift>
+    tmp_8 in unit <shift>
+    tmp_7 in unit <shift>
+    tmp_6 in unit <shift>
+    tmp_5 in unit <shift>
+    tmp_4 in unit <shift>
+    tmp_3 in unit <shift>
+    tmp_2 in unit <shift>
+    tmp_1 in unit <shift>
+    tmp_0 in unit <shift>
+
+
+Optimizing unit <j1soc> ...
+
+Optimizing unit <peripheral_board> ...
+
+Optimizing unit <board> ...
+
+Optimizing unit <sweep> ...
+
+Optimizing unit <j1> ...
+
+Optimizing unit <dualport_RAM> ...
+
+Optimizing unit <core_peripheric> ...
+
+Optimizing unit <peripheral_i2s> ...
+
+Optimizing unit <fifo> ...
+
+Optimizing unit <shift> ...
+
+Optimizing unit <divisor> ...
+
+Optimizing unit <peripheral_uart> ...
+
+Optimizing unit <uart_tx> ...
+
+Optimizing unit <baudgen> ...
+
+Optimizing unit <baudgen_rx> ...
+
+Optimizing unit <peripheral_bcd> ...
+
+Optimizing unit <BCD> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block j1soc, actual ratio is 15.
+FlipFlop per_board/board/s/out_3 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop per_board/board/s/out_2 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop per_board/board/s/out_1 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop per_board/board/s/out_0 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop per_i2s/I2S/i2s/f/clko has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop per_i2s/I2S/i2s/co/num_4 has been replicated 1 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 4516
+ Flip-Flops                                            : 4516
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : project.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 7493
+#      GND                         : 1
+#      INV                         : 15
+#      LUT1                        : 102
+#      LUT2                        : 25
+#      LUT3                        : 154
+#      LUT4                        : 130
+#      LUT5                        : 437
+#      LUT6                        : 5479
+#      MUXCY                       : 146
+#      MUXF7                       : 582
+#      MUXF8                       : 288
+#      VCC                         : 1
+#      XORCY                       : 133
+# FlipFlops/Latches                : 4559
+#      FD                          : 37
+#      FD_1                        : 42
+#      FDC_1                       : 31
+#      FDCE                        : 14
+#      FDE                         : 4208
+#      FDE_1                       : 44
+#      FDP_1                       : 32
+#      FDR                         : 43
+#      FDRE                        : 48
+#      FDS                         : 7
+#      FDSE                        : 10
+#      LD                          : 11
+#      LDC                         : 32
+# RAMS                             : 12
+#      RAM32M                      : 2
+#      RAM32X1D                    : 4
+#      RAMB18E1                    : 2
+#      RAMB36E1                    : 4
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 29
+#      IBUF                        : 5
+#      OBUF                        : 24
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a100tcsg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            4545  out of  126800     3%  
+ Number of Slice LUTs:                 6358  out of  63400    10%  
+    Number used as Logic:              6342  out of  63400    10%  
+    Number used as Memory:               16  out of  19000     0%  
+       Number used as RAM:               16
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   6492
+   Number with an unused Flip Flop:    1947  out of   6492    29%  
+   Number with an unused LUT:           134  out of   6492     2%  
+   Number of fully used LUT-FF pairs:  4411  out of   6492    67%  
+   Number of unique control sets:       375
+
+IO Utilization: 
+ Number of IOs:                          30
+ Number of bonded IOBs:                  30  out of    210    14%  
+    IOB Flip Flops/Latches:              14
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                5  out of    135     3%  
+    Number using Block RAM only:          5
+ Number of BUFG/BUFGCTRLs:                2  out of     32     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+--------------------------------------------------------------------------------------------+--------------------------------------+-------+
+Clock Signal                                                                                | Clock buffer(FF name)                | Load  |
+--------------------------------------------------------------------------------------------+--------------------------------------+-------+
+sys_clk_i                                                                                   | BUFGP                                | 4444  |
+per_board/board/rows[3]_cols[3]_MUX_341_o(per_board/board/Mmux_rows[3]_cols[3]_MUX_341_o1:O)| NONE(*)(per_board/board/n_0)         | 4     |
+per_i2s/I2S/i2s/f/clko                                                                      | BUFG                                 | 69    |
+per_i2s/I2S/mem/W_inv(per_i2s/I2S/mem/W_inv1:O)                                             | NONE(*)(per_i2s/I2S/mem/p_out_6)     | 8     |
+per_i2s/load                                                                                | NONE(per_i2s/I2S/mem/p_in_6)         | 8     |
+per_bcd/init                                                                                | NONE(per_bcd/display/segs_0)         | 7     |
+per_i2s/I2S/i2s/s/load_data[31]_AND_47_o(per_i2s/I2S/i2s/s/load_data[31]_AND_47_o1:O)       | NONE(*)(per_i2s/I2S/i2s/s/tmp_31_LDC)| 1     |
+per_i2s/I2S/i2s/s/load_data[30]_AND_49_o(per_i2s/I2S/i2s/s/load_data[30]_AND_49_o1:O)       | NONE(*)(per_i2s/I2S/i2s/s/tmp_30_LDC)| 1     |
+per_i2s/I2S/i2s/s/load_data[29]_AND_51_o(per_i2s/I2S/i2s/s/load_data[29]_AND_51_o1:O)       | NONE(*)(per_i2s/I2S/i2s/s/tmp_29_LDC)| 1     |
+per_i2s/I2S/i2s/s/load_data[28]_AND_53_o(per_i2s/I2S/i2s/s/load_data[28]_AND_53_o1:O)       | NONE(*)(per_i2s/I2S/i2s/s/tmp_28_LDC)| 1     |
+per_i2s/I2S/i2s/s/load_data[27]_AND_55_o(per_i2s/I2S/i2s/s/load_data[27]_AND_55_o1:O)       | NONE(*)(per_i2s/I2S/i2s/s/tmp_27_LDC)| 1     |
+per_i2s/I2S/i2s/s/load_data[26]_AND_57_o(per_i2s/I2S/i2s/s/load_data[26]_AND_57_o1:O)       | NONE(*)(per_i2s/I2S/i2s/s/tmp_26_LDC)| 1     |
+per_i2s/I2S/i2s/s/load_data[25]_AND_59_o(per_i2s/I2S/i2s/s/load_data[25]_AND_59_o1:O)       | NONE(*)(per_i2s/I2S/i2s/s/tmp_25_LDC)| 1     |
+per_i2s/I2S/i2s/s/load_data[24]_AND_61_o(per_i2s/I2S/i2s/s/load_data[24]_AND_61_o1:O)       | NONE(*)(per_i2s/I2S/i2s/s/tmp_24_LDC)| 1     |
+per_i2s/I2S/i2s/s/load_data[23]_AND_63_o(per_i2s/I2S/i2s/s/load_data[23]_AND_63_o1:O)       | NONE(*)(per_i2s/I2S/i2s/s/tmp_23_LDC)| 1     |
+per_i2s/I2S/i2s/s/load_data[22]_AND_65_o(per_i2s/I2S/i2s/s/load_data[22]_AND_65_o1:O)       | NONE(*)(per_i2s/I2S/i2s/s/tmp_22_LDC)| 1     |
+per_i2s/I2S/i2s/s/load_data[21]_AND_67_o(per_i2s/I2S/i2s/s/load_data[21]_AND_67_o1:O)       | NONE(*)(per_i2s/I2S/i2s/s/tmp_21_LDC)| 1     |
+per_i2s/I2S/i2s/s/load_data[20]_AND_69_o(per_i2s/I2S/i2s/s/load_data[20]_AND_69_o1:O)       | NONE(*)(per_i2s/I2S/i2s/s/tmp_20_LDC)| 1     |
+per_i2s/I2S/i2s/s/load_data[19]_AND_71_o(per_i2s/I2S/i2s/s/load_data[19]_AND_71_o1:O)       | NONE(*)(per_i2s/I2S/i2s/s/tmp_19_LDC)| 1     |
+per_i2s/I2S/i2s/s/load_data[18]_AND_73_o(per_i2s/I2S/i2s/s/load_data[18]_AND_73_o1:O)       | NONE(*)(per_i2s/I2S/i2s/s/tmp_18_LDC)| 1     |
+per_i2s/I2S/i2s/s/load_data[17]_AND_75_o(per_i2s/I2S/i2s/s/load_data[17]_AND_75_o1:O)       | NONE(*)(per_i2s/I2S/i2s/s/tmp_17_LDC)| 1     |
+per_i2s/I2S/i2s/s/load_data[16]_AND_77_o(per_i2s/I2S/i2s/s/load_data[16]_AND_77_o1:O)       | NONE(*)(per_i2s/I2S/i2s/s/tmp_16_LDC)| 1     |
+per_i2s/I2S/i2s/s/load_data[15]_AND_79_o(per_i2s/I2S/i2s/s/load_data[15]_AND_79_o1:O)       | NONE(*)(per_i2s/I2S/i2s/s/tmp_15_LDC)| 1     |
+per_i2s/I2S/i2s/s/load_data[14]_AND_81_o(per_i2s/I2S/i2s/s/load_data[14]_AND_81_o1:O)       | NONE(*)(per_i2s/I2S/i2s/s/tmp_14_LDC)| 1     |
+per_i2s/I2S/i2s/s/load_data[13]_AND_83_o(per_i2s/I2S/i2s/s/load_data[13]_AND_83_o1:O)       | NONE(*)(per_i2s/I2S/i2s/s/tmp_13_LDC)| 1     |
+per_i2s/I2S/i2s/s/load_data[12]_AND_85_o(per_i2s/I2S/i2s/s/load_data[12]_AND_85_o1:O)       | NONE(*)(per_i2s/I2S/i2s/s/tmp_12_LDC)| 1     |
+per_i2s/I2S/i2s/s/load_data[11]_AND_87_o(per_i2s/I2S/i2s/s/load_data[11]_AND_87_o1:O)       | NONE(*)(per_i2s/I2S/i2s/s/tmp_11_LDC)| 1     |
+per_i2s/I2S/i2s/s/load_data[10]_AND_89_o(per_i2s/I2S/i2s/s/load_data[10]_AND_89_o1:O)       | NONE(*)(per_i2s/I2S/i2s/s/tmp_10_LDC)| 1     |
+per_i2s/I2S/i2s/s/load_data[9]_AND_91_o(per_i2s/I2S/i2s/s/load_data[9]_AND_91_o1:O)         | NONE(*)(per_i2s/I2S/i2s/s/tmp_9_LDC) | 1     |
+per_i2s/I2S/i2s/s/load_data[8]_AND_93_o(per_i2s/I2S/i2s/s/load_data[8]_AND_93_o1:O)         | NONE(*)(per_i2s/I2S/i2s/s/tmp_8_LDC) | 1     |
+per_i2s/I2S/i2s/s/load_data[7]_AND_95_o(per_i2s/I2S/i2s/s/load_data[7]_AND_95_o1:O)         | NONE(*)(per_i2s/I2S/i2s/s/tmp_7_LDC) | 1     |
+per_i2s/I2S/i2s/s/load_data[6]_AND_97_o(per_i2s/I2S/i2s/s/load_data[6]_AND_97_o1:O)         | NONE(*)(per_i2s/I2S/i2s/s/tmp_6_LDC) | 1     |
+per_i2s/I2S/i2s/s/load_data[5]_AND_99_o(per_i2s/I2S/i2s/s/load_data[5]_AND_99_o1:O)         | NONE(*)(per_i2s/I2S/i2s/s/tmp_5_LDC) | 1     |
+per_i2s/I2S/i2s/s/load_data[4]_AND_101_o(per_i2s/I2S/i2s/s/load_data[4]_AND_101_o1:O)       | NONE(*)(per_i2s/I2S/i2s/s/tmp_4_LDC) | 1     |
+per_i2s/I2S/i2s/s/load_data[3]_AND_103_o(per_i2s/I2S/i2s/s/load_data[3]_AND_103_o1:O)       | NONE(*)(per_i2s/I2S/i2s/s/tmp_3_LDC) | 1     |
+per_i2s/I2S/i2s/s/load_data[2]_AND_105_o(per_i2s/I2S/i2s/s/load_data[2]_AND_105_o1:O)       | NONE(*)(per_i2s/I2S/i2s/s/tmp_2_LDC) | 1     |
+per_i2s/I2S/i2s/s/load_data[1]_AND_107_o(per_i2s/I2S/i2s/s/load_data[1]_AND_107_o1:O)       | NONE(*)(per_i2s/I2S/i2s/s/tmp_1_LDC) | 1     |
+per_i2s/I2S/i2s/s/load_data[0]_AND_109_o(per_i2s/I2S/i2s/s/load_data[0]_AND_109_o1:O)       | NONE(*)(per_i2s/I2S/i2s/s/tmp_0_LDC) | 1     |
+--------------------------------------------------------------------------------------------+--------------------------------------+-------+
+(*) These 34 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+cpu0/_rstkW(cpu0/Mmux__rstkW11:O)  | NONE(cpu0/Mram_rstack) | 2     |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 9.267ns (Maximum Frequency: 107.905MHz)
+   Minimum input arrival time before clock: 3.094ns
+   Maximum output required time after clock: 1.360ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'sys_clk_i'
+  Clock period: 9.267ns (frequency: 107.905MHz)
+  Total number of paths / destination ports: 388325 / 8887
+-------------------------------------------------------------------------
+Delay:               4.634ns (Levels of Logic = 13)
+  Source:            dpRm/dlptRAM/d_out_1_8 (FF)
+  Destination:       cpu0/st0_15 (FF)
+  Source Clock:      sys_clk_i falling
+  Destination Clock: sys_clk_i rising
+
+  Data Path: dpRm/dlptRAM/d_out_1_8 to cpu0/st0_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE_1:C->Q            1   0.364   0.683  dpRm/dlptRAM/d_out_1_8 (dpRm/dlptRAM/d_out_1_8)
+     LUT5:I0->O            1   0.097   0.683  cpu0/Mmux_st0sel[3]_st1[15]_wide_mux_24_OUT15_A605 (cpu0/Mmux_st0sel[3]_st1[15]_wide_mux_24_OUT15_A604)
+     LUT6:I1->O            1   0.097   0.556  cpu0/Mmux_st0sel[3]_st1[15]_wide_mux_24_OUT15_A606 (cpu0/Mmux_st0sel[3]_st1[15]_wide_mux_24_OUT15_A605)
+     LUT5:I1->O            1   0.097   0.693  cpu0/Mmux_st0sel[3]_st1[15]_wide_mux_24_OUT15_A608 (cpu0/Mmux_st0sel[3]_st1[15]_wide_mux_24_OUT15_rs_A<8>)
+     LUT6:I0->O            1   0.097   0.000  cpu0/Mmux_st0sel[3]_st1[15]_wide_mux_24_OUT15_rs_lut<8> (cpu0/Mmux_st0sel[3]_st1[15]_wide_mux_24_OUT15_rs_lut<8>)
+     MUXCY:S->O            1   0.353   0.000  cpu0/Mmux_st0sel[3]_st1[15]_wide_mux_24_OUT15_rs_cy<8> (cpu0/Mmux_st0sel[3]_st1[15]_wide_mux_24_OUT15_rs_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  cpu0/Mmux_st0sel[3]_st1[15]_wide_mux_24_OUT15_rs_cy<9> (cpu0/Mmux_st0sel[3]_st1[15]_wide_mux_24_OUT15_rs_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  cpu0/Mmux_st0sel[3]_st1[15]_wide_mux_24_OUT15_rs_cy<10> (cpu0/Mmux_st0sel[3]_st1[15]_wide_mux_24_OUT15_rs_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  cpu0/Mmux_st0sel[3]_st1[15]_wide_mux_24_OUT15_rs_cy<11> (cpu0/Mmux_st0sel[3]_st1[15]_wide_mux_24_OUT15_rs_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  cpu0/Mmux_st0sel[3]_st1[15]_wide_mux_24_OUT15_rs_cy<12> (cpu0/Mmux_st0sel[3]_st1[15]_wide_mux_24_OUT15_rs_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  cpu0/Mmux_st0sel[3]_st1[15]_wide_mux_24_OUT15_rs_cy<13> (cpu0/Mmux_st0sel[3]_st1[15]_wide_mux_24_OUT15_rs_cy<13>)
+     MUXCY:CI->O           0   0.023   0.000  cpu0/Mmux_st0sel[3]_st1[15]_wide_mux_24_OUT15_rs_cy<14> (cpu0/Mmux_st0sel[3]_st1[15]_wide_mux_24_OUT15_rs_cy<14>)
+     XORCY:CI->O           2   0.370   0.299  cpu0/Mmux_st0sel[3]_st1[15]_wide_mux_24_OUT15_rs_xor<15> (cpu0/Mmux_st0sel[3]_st1[15]_wide_mux_24_OUT15_split<15>)
+     LUT2:I1->O            2   0.097   0.000  cpu0/Mmux__st071 (cpu0/_st0<15>)
+     FDR:D                     0.008          cpu0/st0_15
+    ----------------------------------------
+    Total                      4.634ns (1.718ns logic, 2.916ns route)
+                                       (37.1% logic, 62.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'per_board/board/rows[3]_cols[3]_MUX_341_o'
+  Clock period: 2.057ns (frequency: 486.216MHz)
+  Total number of paths / destination ports: 7 / 4
+-------------------------------------------------------------------------
+Delay:               2.057ns (Levels of Logic = 3)
+  Source:            per_board/board/n_2 (LATCH)
+  Destination:       per_board/board/n_2 (LATCH)
+  Source Clock:      per_board/board/rows[3]_cols[3]_MUX_341_o falling
+  Destination Clock: per_board/board/rows[3]_cols[3]_MUX_341_o falling
+
+  Data Path: per_board/board/n_2 to per_board/board/n_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               3   0.472   0.703  per_board/board/n_2 (per_board/board/n_2)
+     LUT6:I0->O            1   0.097   0.295  per_board/board/Mmux_n[3]_n[3]_MUX_339_o221 (per_board/board/Mmux_n[3]_n[3]_MUX_339_o22)
+     LUT6:I5->O            1   0.097   0.295  per_board/board/Mmux_n[3]_n[3]_MUX_339_o222 (per_board/board/Mmux_n[3]_n[3]_MUX_339_o221)
+     LUT6:I5->O            1   0.097   0.000  per_board/board/Mmux_n[3]_n[3]_MUX_339_o223 (per_board/board/n[3]_n[3]_MUX_356_o)
+     LD:D                     -0.028          per_board/board/n_2
+    ----------------------------------------
+    Total                      2.057ns (0.763ns logic, 1.294ns route)
+                                       (37.1% logic, 62.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'per_i2s/I2S/i2s/f/clko'
+  Clock period: 1.905ns (frequency: 524.937MHz)
+  Total number of paths / destination ports: 487 / 137
+-------------------------------------------------------------------------
+Delay:               1.905ns (Levels of Logic = 1)
+  Source:            per_i2s/I2S/i2s/co/num_3 (FF)
+  Destination:       per_i2s/I2S/i2s/co/num_4 (FF)
+  Source Clock:      per_i2s/I2S/i2s/f/clko falling
+  Destination Clock: per_i2s/I2S/i2s/f/clko falling
+
+  Data Path: per_i2s/I2S/i2s/co/num_3 to per_i2s/I2S/i2s/co/num_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDS:C->Q             68   0.361   0.796  per_i2s/I2S/i2s/co/num_3 (per_i2s/I2S/i2s/co/num_3)
+     LUT5:I0->O            6   0.097   0.302  per_i2s/I2S/busy_INV_96_o1 (per_i2s/I2S/busy_INV_96_o)
+     FDS:S                     0.349          per_i2s/I2S/i2s/co/num_0
+    ----------------------------------------
+    Total                      1.905ns (0.807ns logic, 1.098ns route)
+                                       (42.4% logic, 57.6% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'per_i2s/I2S/mem/W_inv'
+  Clock period: 2.745ns (frequency: 364.246MHz)
+  Total number of paths / destination ports: 87 / 14
+-------------------------------------------------------------------------
+Delay:               2.745ns (Levels of Logic = 4)
+  Source:            per_i2s/I2S/mem/p_out_0 (FF)
+  Destination:       per_i2s/I2S/mem/p_out_5 (FF)
+  Source Clock:      per_i2s/I2S/mem/W_inv rising
+  Destination Clock: per_i2s/I2S/mem/W_inv rising
+
+  Data Path: per_i2s/I2S/mem/p_out_0 to per_i2s/I2S/mem/p_out_5
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             9   0.361   0.593  per_i2s/I2S/mem/p_out_0 (per_i2s/I2S/mem/p_out_0)
+     LUT4:I0->O            6   0.097   0.318  per_i2s/I2S/mem/GND_15_o_GND_15_o_equal_14_o<6>11 (per_i2s/I2S/mem/GND_15_o_GND_15_o_equal_14_o<6>1)
+     LUT4:I3->O            3   0.097   0.389  per_i2s/I2S/mem/GND_15_o_GND_15_o_equal_14_o<6>2 (per_i2s/I2S/mem/GND_15_o_GND_15_o_equal_14_o)
+     LUT6:I4->O            2   0.097   0.688  per_i2s/I2S/mem/Mcount_p_out_cy<4>11 (per_i2s/I2S/mem/Mcount_p_out_cy<4>)
+     LUT5:I0->O            1   0.097   0.000  per_i2s/I2S/mem/Mcount_p_out_xor<5>11 (per_i2s/I2S/mem/Mcount_p_out5)
+     FDCE:D                    0.008          per_i2s/I2S/mem/p_out_5
+    ----------------------------------------
+    Total                      2.745ns (0.757ns logic, 1.988ns route)
+                                       (27.6% logic, 72.4% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'per_i2s/load'
+  Clock period: 3.888ns (frequency: 257.188MHz)
+  Total number of paths / destination ports: 593 / 25
+-------------------------------------------------------------------------
+Delay:               3.888ns (Levels of Logic = 5)
+  Source:            per_i2s/I2S/mem/p_in_0 (FF)
+  Destination:       per_i2s/I2S/mem/Mram_fifo (RAM)
+  Source Clock:      per_i2s/load rising
+  Destination Clock: per_i2s/load rising
+
+  Data Path: per_i2s/I2S/mem/p_in_0 to per_i2s/I2S/mem/Mram_fifo
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            13   0.361   0.739  per_i2s/I2S/mem/p_in_0 (per_i2s/I2S/mem/p_in_0)
+     LUT6:I1->O            2   0.097   0.697  per_i2s/I2S/mem/GND_15_o_GND_15_o_equal_6_o511 (per_i2s/I2S/mem/GND_15_o_GND_15_o_equal_6_o51)
+     LUT6:I0->O            1   0.097   0.683  per_i2s/I2S/mem/Mmux_full12 (per_i2s/I2S/mem/Mmux_full11)
+     LUT6:I1->O            1   0.097   0.000  per_i2s/I2S/mem/Mmux_full16_F (N78)
+     MUXF7:I0->O           3   0.277   0.305  per_i2s/I2S/mem/Mmux_full16 (per_i2s/full)
+     LUT2:I1->O            0   0.097   0.000  per_i2s/I2S/mem/Mmux_BUS_000411 (per_i2s/I2S/mem/BUS_0004)
+     RAMB18E1:WEBWE0           0.437          per_i2s/I2S/mem/Mram_fifo
+    ----------------------------------------
+    Total                      3.888ns (1.463ns logic, 2.425ns route)
+                                       (37.6% logic, 62.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'per_board/board/rows[3]_cols[3]_MUX_341_o'
+  Total number of paths / destination ports: 88 / 4
+-------------------------------------------------------------------------
+Offset:              2.089ns (Levels of Logic = 5)
+  Source:            cols<3> (PAD)
+  Destination:       per_board/board/n_1 (LATCH)
+  Destination Clock: per_board/board/rows[3]_cols[3]_MUX_341_o falling
+
+  Data Path: cols<3> to per_board/board/n_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   0.001   0.570  cols_3_IBUF (cols_3_IBUF)
+     LUT4:I0->O            7   0.097   0.539  per_board/board/cols[3]_PWR_25_o_equal_2_o<3>1 (per_board/board/cols[3]_PWR_25_o_equal_2_o)
+     LUT4:I1->O            1   0.097   0.295  per_board/board/Mmux_n[3]_n[3]_MUX_339_o2511 (per_board/board/Mmux_n[3]_n[3]_MUX_339_o25)
+     LUT6:I5->O            1   0.097   0.295  per_board/board/Mmux_n[3]_n[3]_MUX_339_o252 (per_board/board/Mmux_n[3]_n[3]_MUX_339_o251)
+     LUT6:I5->O            1   0.097   0.000  per_board/board/Mmux_n[3]_n[3]_MUX_339_o253 (per_board/board/n[3]_n[3]_MUX_373_o)
+     LD:D                     -0.028          per_board/board/n_1
+    ----------------------------------------
+    Total                      2.089ns (0.389ns logic, 1.700ns route)
+                                       (18.6% logic, 81.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'sys_clk_i'
+  Total number of paths / destination ports: 150 / 98
+-------------------------------------------------------------------------
+Offset:              3.094ns (Levels of Logic = 4)
+  Source:            sys_rst_i (PAD)
+  Destination:       cpu0/Mram_rstack (RAM)
+  Destination Clock: sys_clk_i rising
+
+  Data Path: sys_rst_i to cpu0/Mram_rstack
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            90   0.001   0.627  sys_rst_i_IBUF (sys_rst_i_IBUF)
+     LUT6:I3->O           13   0.097   0.612  cpu0/mux10131 (cpu0/mux1013)
+     LUT5:I1->O            6   0.097   0.706  cpu0/mux13 (cpu0/_pc<0>)
+     LUT5:I0->O            1   0.097   0.279  cpu0/Mmux__rstkD17 (cpu0/_rstkD<0>)
+     RAMB18E1:DIADI0           0.577          cpu0/Mram_rstack
+    ----------------------------------------
+    Total                      3.094ns (0.869ns logic, 2.225ns route)
+                                       (28.1% logic, 71.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'per_i2s/I2S/mem/W_inv'
+  Total number of paths / destination ports: 15 / 15
+-------------------------------------------------------------------------
+Offset:              1.201ns (Levels of Logic = 2)
+  Source:            sys_rst_i (PAD)
+  Destination:       per_i2s/I2S/mem/Mram_fifo (RAM)
+  Destination Clock: per_i2s/I2S/mem/W_inv rising
+
+  Data Path: sys_rst_i to per_i2s/I2S/mem/Mram_fifo
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            90   0.001   0.395  sys_rst_i_IBUF (sys_rst_i_IBUF)
+     INV:I->O             15   0.113   0.344  per_i2s/I2S/mem/rst_inv1_INV_0 (per_i2s/I2S/mem/rst_inv)
+     RAMB18E1:ENARDEN          0.348          per_i2s/I2S/mem/Mram_fifo
+    ----------------------------------------
+    Total                      1.201ns (0.462ns logic, 0.739ns route)
+                                       (38.5% logic, 61.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'per_i2s/load'
+  Total number of paths / destination ports: 33 / 18
+-------------------------------------------------------------------------
+Offset:              2.023ns (Levels of Logic = 4)
+  Source:            sys_rst_i (PAD)
+  Destination:       per_i2s/I2S/mem/Mram_fifo (RAM)
+  Destination Clock: per_i2s/load rising
+
+  Data Path: sys_rst_i to per_i2s/I2S/mem/Mram_fifo
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            90   0.001   0.809  sys_rst_i_IBUF (sys_rst_i_IBUF)
+     LUT6:I0->O            1   0.097   0.000  per_i2s/I2S/mem/Mmux_full16_F (N78)
+     MUXF7:I0->O           3   0.277   0.305  per_i2s/I2S/mem/Mmux_full16 (per_i2s/full)
+     LUT2:I1->O            0   0.097   0.000  per_i2s/I2S/mem/Mmux_BUS_000411 (per_i2s/I2S/mem/BUS_0004)
+     RAMB18E1:WEBWE0           0.437          per_i2s/I2S/mem/Mram_fifo
+    ----------------------------------------
+    Total                      2.023ns (0.909ns logic, 1.114ns route)
+                                       (44.9% logic, 55.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'per_bcd/init'
+  Total number of paths / destination ports: 7 / 7
+-------------------------------------------------------------------------
+Offset:              0.751ns (Levels of Logic = 1)
+  Source:            per_bcd/display/segs_6 (LATCH)
+  Destination:       segs<6> (PAD)
+  Source Clock:      per_bcd/init falling
+
+  Data Path: per_bcd/display/segs_6 to segs<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.472   0.279  per_bcd/display/segs_6 (per_bcd/display/segs_6)
+     OBUF:I->O                 0.000          segs_6_OBUF (segs<6>)
+    ----------------------------------------
+    Total                      0.751ns (0.472ns logic, 0.279ns route)
+                                       (62.8% logic, 37.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'sys_clk_i'
+  Total number of paths / destination ports: 7 / 7
+-------------------------------------------------------------------------
+Offset:              1.073ns (Levels of Logic = 2)
+  Source:            per_bcd/init (FF)
+  Destination:       anode<0> (PAD)
+  Source Clock:      sys_clk_i falling
+
+  Data Path: per_bcd/init to anode<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD_1:C->Q             9   0.364   0.316  per_bcd/init (per_bcd/init)
+     INV:I->O              1   0.113   0.279  per_bcd/display/_n00381_INV_0 (anode_0_OBUF)
+     OBUF:I->O                 0.000          anode_0_OBUF (anode<0>)
+    ----------------------------------------
+    Total                      1.073ns (0.477ns logic, 0.596ns route)
+                                       (44.5% logic, 55.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'per_i2s/I2S/i2s/s/load_data[31]_AND_47_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.360ns (Levels of Logic = 2)
+  Source:            per_i2s/I2S/i2s/s/tmp_31_LDC (LATCH)
+  Destination:       SD (PAD)
+  Source Clock:      per_i2s/I2S/i2s/s/load_data[31]_AND_47_o falling
+
+  Data Path: per_i2s/I2S/i2s/s/tmp_31_LDC to SD
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              1   0.472   0.511  per_i2s/I2S/i2s/s/tmp_31_LDC (per_i2s/I2S/i2s/s/tmp_31_LDC)
+     LUT3:I0->O            1   0.097   0.279  per_i2s/I2S/i2s/s/tmp_311 (per_i2s/I2S/i2s/s/tmp_31)
+     OBUF:I->O                 0.000          SD_OBUF (SD)
+    ----------------------------------------
+    Total                      1.360ns (0.569ns logic, 0.791ns route)
+                                       (41.9% logic, 58.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'per_i2s/I2S/i2s/f/clko'
+  Total number of paths / destination ports: 3 / 2
+-------------------------------------------------------------------------
+Offset:              1.120ns (Levels of Logic = 2)
+  Source:            per_i2s/I2S/i2s/s/tmp_31_P_31 (FF)
+  Destination:       SD (PAD)
+  Source Clock:      per_i2s/I2S/i2s/f/clko falling
+
+  Data Path: per_i2s/I2S/i2s/s/tmp_31_P_31 to SD
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP_1:C->Q            1   0.364   0.379  per_i2s/I2S/i2s/s/tmp_31_P_31 (per_i2s/I2S/i2s/s/tmp_31_P_31)
+     LUT3:I1->O            1   0.097   0.279  per_i2s/I2S/i2s/s/tmp_311 (per_i2s/I2S/i2s/s/tmp_31)
+     OBUF:I->O                 0.000          SD_OBUF (SD)
+    ----------------------------------------
+    Total                      1.120ns (0.461ns logic, 0.659ns route)
+                                       (41.2% logic, 58.8% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock per_bcd/init
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+sys_clk_i      |         |         |    1.045|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_board/board/rows[3]_cols[3]_MUX_341_o
+-----------------------------------------+---------+---------+---------+---------+
+                                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                             |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------------------------+---------+---------+---------+---------+
+per_board/board/rows[3]_cols[3]_MUX_341_o|         |         |    2.057|         |
+sys_clk_i                                |         |         |    2.649|         |
+-----------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/f/clko
+----------------------------------------+---------+---------+---------+---------+
+                                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko                  |         |         |    1.905|         |
+per_i2s/I2S/i2s/s/load_data[0]_AND_109_o|         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[10]_AND_89_o|         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[11]_AND_87_o|         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[12]_AND_85_o|         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[13]_AND_83_o|         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[14]_AND_81_o|         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[15]_AND_79_o|         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[16]_AND_77_o|         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[17]_AND_75_o|         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[18]_AND_73_o|         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[19]_AND_71_o|         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[1]_AND_107_o|         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[20]_AND_69_o|         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[21]_AND_67_o|         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[22]_AND_65_o|         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[23]_AND_63_o|         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[24]_AND_61_o|         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[25]_AND_59_o|         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[26]_AND_57_o|         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[27]_AND_55_o|         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[28]_AND_53_o|         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[29]_AND_51_o|         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[2]_AND_105_o|         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[30]_AND_49_o|         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[3]_AND_103_o|         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[4]_AND_101_o|         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[5]_AND_99_o |         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[6]_AND_97_o |         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[7]_AND_95_o |         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[8]_AND_93_o |         |         |    1.088|         |
+per_i2s/I2S/i2s/s/load_data[9]_AND_91_o |         |         |    1.088|         |
+per_i2s/I2S/mem/W_inv                   |         |         |    3.273|         |
+----------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[0]_AND_109_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.882|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.269|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[10]_AND_89_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[11]_AND_87_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[12]_AND_85_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[13]_AND_83_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[14]_AND_81_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[15]_AND_79_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[16]_AND_77_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[17]_AND_75_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[18]_AND_73_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[19]_AND_71_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[1]_AND_107_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[20]_AND_69_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[21]_AND_67_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[22]_AND_65_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[23]_AND_63_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[24]_AND_61_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[25]_AND_59_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[26]_AND_57_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[27]_AND_55_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[28]_AND_53_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[29]_AND_51_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[2]_AND_105_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[30]_AND_49_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[31]_AND_47_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[3]_AND_103_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[4]_AND_101_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[5]_AND_99_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[6]_AND_97_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[7]_AND_95_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[8]_AND_93_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/i2s/s/load_data[9]_AND_91_o
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+per_i2s/I2S/i2s/f/clko|         |         |    1.886|         |
+per_i2s/I2S/mem/W_inv |         |         |    3.273|         |
+----------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/I2S/mem/W_inv
+---------------------+---------+---------+---------+---------+
+                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------+---------+---------+---------+---------+
+per_i2s/I2S/mem/W_inv|    2.745|         |         |         |
+sys_clk_i            |         |    1.224|         |         |
+---------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock per_i2s/load
+---------------------+---------+---------+---------+---------+
+                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------+---------+---------+---------+---------+
+per_i2s/I2S/mem/W_inv|    3.070|         |         |         |
+per_i2s/load         |    3.888|         |         |         |
+sys_clk_i            |         |    1.224|         |         |
+---------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock sys_clk_i
+-----------------------------------------+---------+---------+---------+---------+
+                                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                             |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------------------------+---------+---------+---------+---------+
+per_board/board/rows[3]_cols[3]_MUX_341_o|         |         |    0.966|         |
+per_i2s/I2S/mem/W_inv                    |         |         |    3.033|         |
+per_i2s/load                             |         |         |    3.851|         |
+sys_clk_i                                |    7.115|    4.634|    3.336|         |
+-----------------------------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 100.00 secs
+Total CPU time to Xst completion: 98.56 secs
+ 
+--> 
+
+
+Total memory usage is 708732 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  119 (   0 filtered)
+Number of infos    :    7 (   0 filtered)
+

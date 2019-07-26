@@ -1,0 +1,77 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -v 25 project_r.ncd
+project.pcf
+
+Design file:              project_r.ncd
+Physical constraint file: project.pcf
+Device,package,speed:     xc7a100t,csg324,C,-3 (PRODUCTION 1.10 2013-10-13)
+Report level:             verbose report, limited to 25 items per constraint
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock init
+------------+------------+------------+------------+------------+------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------+------------+------------+------------+------------+------------------+--------+
+n<0>        |    0.811(F)|      FAST  |    1.101(F)|      SLOW  |init_IBUF_BUFG    |   0.000|
+n<1>        |    0.893(F)|      FAST  |    0.754(F)|      SLOW  |init_IBUF_BUFG    |   0.000|
+n<2>        |    0.645(F)|      FAST  |    1.098(F)|      SLOW  |init_IBUF_BUFG    |   0.000|
+n<3>        |    0.532(F)|      FAST  |    1.384(F)|      SLOW  |init_IBUF_BUFG    |   0.000|
+------------+------------+------------+------------+------------+------------------+--------+
+
+Clock init to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+segs<0>     |         7.785(F)|      SLOW  |         2.910(F)|      FAST  |init_IBUF_BUFG    |   0.000|
+segs<1>     |         7.795(F)|      SLOW  |         2.919(F)|      FAST  |init_IBUF_BUFG    |   0.000|
+segs<2>     |         7.787(F)|      SLOW  |         2.911(F)|      FAST  |init_IBUF_BUFG    |   0.000|
+segs<3>     |         7.786(F)|      SLOW  |         2.911(F)|      FAST  |init_IBUF_BUFG    |   0.000|
+segs<4>     |         7.773(F)|      SLOW  |         2.897(F)|      FAST  |init_IBUF_BUFG    |   0.000|
+segs<5>     |         7.796(F)|      SLOW  |         2.920(F)|      FAST  |init_IBUF_BUFG    |   0.000|
+segs<6>     |         7.787(F)|      SLOW  |         2.910(F)|      FAST  |init_IBUF_BUFG    |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+init           |anode<0>       |    5.998|
+---------------+---------------+---------+
+
+
+Analysis completed Thu Jul 25 20:04:14 2019 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 751 MB
+
+
+

@@ -1,0 +1,20 @@
+#clock
+NET "clk"  LOC = "E3" | IOSTANDARD = "LVCMOS33";
+NET "init"  LOC = "U9" | IOSTANDARD = "LVCMOS33";
+
+#Input
+NET "cols<0>"  LOC = "B13" | IOSTANDARD = "LVCMOS33";#1
+NET "cols<1>"  LOC = "F14" | IOSTANDARD = "LVCMOS33";#2
+NET "cols<2>"  LOC = "D17" | IOSTANDARD = "LVCMOS33";#3
+NET "cols<3>"  LOC = "E17" | IOSTANDARD = "LVCMOS33";#4
+
+#Output
+NET "rows<0>"  LOC = "G13" | IOSTANDARD = "LVCMOS33";#7
+NET "rows<1>"  LOC = "C17" | IOSTANDARD = "LVCMOS33";#8
+NET "rows<2>"  LOC = "D18" | IOSTANDARD = "LVCMOS33";#9
+NET "rows<3>"  LOC = "E18" | IOSTANDARD = "LVCMOS33";#10
+
+NET "n<0>"  LOC = "P5" | IOSTANDARD = "LVCMOS33";
+NET "n<1>"  LOC = "U1" | IOSTANDARD = "LVCMOS33";
+NET "n<2>"  LOC = "R2" | IOSTANDARD = "LVCMOS33";
+NET "n<3>"  LOC = "P2" | IOSTANDARD = "LVCMOS33";

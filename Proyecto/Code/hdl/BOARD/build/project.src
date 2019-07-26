@@ -1,0 +1,2 @@
+verilog work ../board.v
+verilog work ../sweep.v

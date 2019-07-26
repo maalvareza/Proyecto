@@ -1,0 +1,1227 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "project.src"
+Input Format                       : mixed
+
+---- Target Parameters
+Target Device                      : xc7a100t-3csg324
+Output File Name                   : "project.ngc"
+Output Format                      : NGC
+
+---- Source Options
+Top Module Name                    : SimI2S
+
+---- General Options
+Optimization Goal                  : Area
+Optimization Effort                : 1
+RTL Output                         : yes
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/Independent/onlyI2S/SimI2S.v" into library work
+Parsing module <SimI2S>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/Independent/onlyI2S/comparator0.v" into library work
+Parsing module <comparator0>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/Independent/onlyI2S/counter.v" into library work
+Parsing module <counter>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/Independent/onlyI2S/divisor.v" into library work
+Parsing module <divisor>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/Independent/onlyI2S/shift.v" into library work
+Parsing module <shift>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/Independent/onlyI2S/fifo.v" into library work
+Parsing module <fifo>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/Independent/onlyI2S/comparator16.v" into library work
+Parsing module <comparator16>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/Independent/onlyI2S/I2S.v" into library work
+Parsing module <I2S>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <SimI2S>.
+
+Elaborating module <I2S>.
+
+Elaborating module <divisor>.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/Independent/onlyI2S/divisor.v" Line 9: Result of 8-bit expression is truncated to fit in 7-bit target.
+
+Elaborating module <shift>.
+
+Elaborating module <counter>.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/Independent/onlyI2S/counter.v" Line 9: Result of 32-bit expression is truncated to fit in 5-bit target.
+
+Elaborating module <comparator0>.
+
+Elaborating module <comparator16>.
+
+Elaborating module <fifo>.
+Reading initialization file \"/home/cychitivav/Downloads/Digital/Code/Independent/onlyI2S/audio.mem\".
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/Independent/onlyI2S/fifo.v" Line 42: Result of 8-bit expression is truncated to fit in 7-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/Independent/onlyI2S/fifo.v" Line 52: Result of 8-bit expression is truncated to fit in 7-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <SimI2S>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/Independent/onlyI2S/SimI2S.v".
+        nBits = 32
+    Summary:
+	no macro.
+Unit <SimI2S> synthesized.
+
+Synthesizing Unit <I2S>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/Independent/onlyI2S/I2S.v".
+        nBits = 32
+    Summary:
+	no macro.
+Unit <I2S> synthesized.
+
+Synthesizing Unit <divisor>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/Independent/onlyI2S/divisor.v".
+        fin = 100000000
+        fout = 1411200
+    Found 1-bit register for signal <clko>.
+    Found 7-bit register for signal <count>.
+    Found 7-bit adder for signal <_n0018> created at line 9.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   8 D-type flip-flop(s).
+Unit <divisor> synthesized.
+
+Synthesizing Unit <shift>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/Independent/onlyI2S/shift.v".
+        nBits = 32
+    Found 1-bit register for signal <tmp<31>>.
+    Found 1-bit register for signal <tmp<30>>.
+    Found 1-bit register for signal <tmp<29>>.
+    Found 1-bit register for signal <tmp<28>>.
+    Found 1-bit register for signal <tmp<27>>.
+    Found 1-bit register for signal <tmp<26>>.
+    Found 1-bit register for signal <tmp<25>>.
+    Found 1-bit register for signal <tmp<24>>.
+    Found 1-bit register for signal <tmp<23>>.
+    Found 1-bit register for signal <tmp<22>>.
+    Found 1-bit register for signal <tmp<21>>.
+    Found 1-bit register for signal <tmp<20>>.
+    Found 1-bit register for signal <tmp<19>>.
+    Found 1-bit register for signal <tmp<18>>.
+    Found 1-bit register for signal <tmp<17>>.
+    Found 1-bit register for signal <tmp<16>>.
+    Found 1-bit register for signal <tmp<15>>.
+    Found 1-bit register for signal <tmp<14>>.
+    Found 1-bit register for signal <tmp<13>>.
+    Found 1-bit register for signal <tmp<12>>.
+    Found 1-bit register for signal <tmp<11>>.
+    Found 1-bit register for signal <tmp<10>>.
+    Found 1-bit register for signal <tmp<9>>.
+    Found 1-bit register for signal <tmp<8>>.
+    Found 1-bit register for signal <tmp<7>>.
+    Found 1-bit register for signal <tmp<6>>.
+    Found 1-bit register for signal <tmp<5>>.
+    Found 1-bit register for signal <tmp<4>>.
+    Found 1-bit register for signal <tmp<3>>.
+    Found 1-bit register for signal <tmp<2>>.
+    Found 1-bit register for signal <tmp<1>>.
+    Found 1-bit register for signal <tmp<0>>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+Unit <shift> synthesized.
+
+Synthesizing Unit <counter>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/Independent/onlyI2S/counter.v".
+        nBits = 32
+    Found 5-bit register for signal <num>.
+    Found 5-bit subtractor for signal <GND_5_o_GND_5_o_sub_2_OUT<4:0>> created at line 9.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   5 D-type flip-flop(s).
+Unit <counter> synthesized.
+
+Synthesizing Unit <comparator0>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/Independent/onlyI2S/comparator0.v".
+        nBits = 32
+    Summary:
+	no macro.
+Unit <comparator0> synthesized.
+
+Synthesizing Unit <comparator16>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/Independent/onlyI2S/comparator16.v".
+        nBits = 32
+    Found 5-bit comparator lessequal for signal <x[4]_PWR_8_o_LessThan_1_o> created at line 6
+    Summary:
+	inferred   1 Comparator(s).
+Unit <comparator16> synthesized.
+
+Synthesizing Unit <fifo>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/Independent/onlyI2S/fifo.v".
+        nBits = 32
+        dataMax = 100
+        file = "/home/cychitivav/Downloads/Digital/Code/Independent/onlyI2S/audio.mem"
+WARNING:Xst:3035 - Index value(s) does not match array range for signal <fifo>, simulation mismatch.
+    Found 100x32-bit dual-port RAM <Mram_fifo> for signal <fifo>.
+    Found 7-bit register for signal <p_in>.
+    Found 7-bit register for signal <p_out>.
+    Found 32-bit register for signal <dataOut>.
+    Found 7-bit adder for signal <p_in[6]_GND_8_o_add_2_OUT> created at line 42.
+    Found 7-bit adder for signal <p_out[6]_GND_8_o_add_7_OUT> created at line 52.
+WARNING:Xst:737 - Found 1-bit latch for signal <full>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 7-bit comparator equal for signal <p_in[6]_p_out[6]_equal_1_o> created at line 32
+    Summary:
+	inferred   1 RAM(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  46 D-type flip-flop(s).
+	inferred   1 Latch(s).
+	inferred   1 Comparator(s).
+	inferred   4 Multiplexer(s).
+Unit <fifo> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 100x32-bit dual-port RAM                              : 1
+# Adders/Subtractors                                   : 4
+ 5-bit subtractor                                      : 1
+ 7-bit adder                                           : 3
+# Registers                                            : 38
+ 1-bit register                                        : 33
+ 32-bit register                                       : 1
+ 5-bit register                                        : 1
+ 7-bit register                                        : 3
+# Latches                                              : 1
+ 1-bit latch                                           : 1
+# Comparators                                          : 2
+ 5-bit comparator lessequal                            : 1
+ 7-bit comparator equal                                : 1
+# Multiplexers                                         : 4
+ 1-bit 2-to-1 multiplexer                              : 2
+ 7-bit 2-to-1 multiplexer                              : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1426 - The value init of the FF/Latch full hinder the constant cleaning in the block mem.
+   You should achieve better results by setting this init to 0.
+
+Synthesizing (advanced) Unit <counter>.
+The following registers are absorbed into counter <num>: 1 register on signal <num>.
+Unit <counter> synthesized (advanced).
+
+Synthesizing (advanced) Unit <divisor>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <divisor> synthesized (advanced).
+
+Synthesizing (advanced) Unit <fifo>.
+The following registers are absorbed into counter <p_out>: 1 register on signal <p_out>.
+INFO:Xst:3226 - The RAM <Mram_fifo> will be implemented as a BLOCK RAM, absorbing the following register(s): <dataOut>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 100-word x 32-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <R>             | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <p_in>          |          |
+    |     diA            | connected to signal <dataIn>        |          |
+    -----------------------------------------------------------------------
+    | optimization       | area                                |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 100-word x 32-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <W>             | rise     |
+    |     enB            | connected to signal <rst>           | low      |
+    |     addrB          | connected to signal <p_out>         |          |
+    |     doB            | connected to signal <dataOut>       |          |
+    -----------------------------------------------------------------------
+    | optimization       | area                                |          |
+    -----------------------------------------------------------------------
+Unit <fifo> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 100x32-bit dual-port block RAM                        : 1
+# Adders/Subtractors                                   : 2
+ 7-bit adder                                           : 2
+# Counters                                             : 3
+ 5-bit down counter                                    : 1
+ 7-bit up counter                                      : 2
+# Registers                                            : 40
+ Flip-Flops                                            : 40
+# Comparators                                          : 2
+ 5-bit comparator lessequal                            : 1
+ 7-bit comparator equal                                : 1
+# Multiplexers                                         : 3
+ 1-bit 2-to-1 multiplexer                              : 2
+ 7-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1426 - The value init of the FF/Latch full hinder the constant cleaning in the block fifo.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:3001 - This design contains one or more registers or latches with an active
+   asynchronous set and asynchronous reset. While this circuit can be built,
+   it creates a sub-optimal implementation in terms of area, power and
+   performance. For a more optimal implementation Xilinx highly recommends
+   one of the following:
+
+          1) Remove either the set or reset from all registers and latches if
+             not needed for required functionality
+          2) Modify the code in order to produce a synchronous set
+             and/or reset (both is preferred)
+          3) Use the -async_to_sync option to transform the asynchronous
+             set/reset to synchronous operation
+             (timing simulation highly recommended when using this option)
+
+  Please refer to http://www.xilinx.com search string "Artix7 asynchronous set/reset" for more details.
+
+  List of register instances with asynchronous set and reset:
+    tmp_31 in unit <shift>
+    tmp_30 in unit <shift>
+    tmp_29 in unit <shift>
+    tmp_28 in unit <shift>
+    tmp_27 in unit <shift>
+    tmp_26 in unit <shift>
+    tmp_25 in unit <shift>
+    tmp_24 in unit <shift>
+    tmp_23 in unit <shift>
+    tmp_22 in unit <shift>
+    tmp_21 in unit <shift>
+    tmp_20 in unit <shift>
+    tmp_19 in unit <shift>
+    tmp_18 in unit <shift>
+    tmp_17 in unit <shift>
+    tmp_16 in unit <shift>
+    tmp_15 in unit <shift>
+    tmp_14 in unit <shift>
+    tmp_13 in unit <shift>
+    tmp_12 in unit <shift>
+    tmp_11 in unit <shift>
+    tmp_10 in unit <shift>
+    tmp_9 in unit <shift>
+    tmp_8 in unit <shift>
+    tmp_7 in unit <shift>
+    tmp_6 in unit <shift>
+    tmp_5 in unit <shift>
+    tmp_4 in unit <shift>
+    tmp_3 in unit <shift>
+    tmp_2 in unit <shift>
+    tmp_1 in unit <shift>
+    tmp_0 in unit <shift>
+
+
+Optimizing unit <SimI2S> ...
+
+Optimizing unit <fifo> ...
+
+Optimizing unit <shift> ...
+
+Optimizing unit <divisor> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block SimI2S, actual ratio is 0.
+Latch mem/full has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop i2s/f/clko has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop i2s/co/num_4 has been replicated 1 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 92
+ Flip-Flops                                            : 92
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : project.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 143
+#      GND                         : 1
+#      INV                         : 5
+#      LUT2                        : 8
+#      LUT3                        : 36
+#      LUT4                        : 11
+#      LUT5                        : 9
+#      LUT6                        : 72
+#      VCC                         : 1
+# FlipFlops/Latches                : 126
+#      FD                          : 3
+#      FDC                         : 7
+#      FDC_1                       : 31
+#      FDCE                        : 7
+#      FDP_1                       : 32
+#      FDR                         : 1
+#      FDRE                        : 5
+#      FDS                         : 6
+#      LDC                         : 34
+# RAMS                             : 1
+#      RAMB18E1                    : 1
+# Clock Buffers                    : 3
+#      BUFG                        : 1
+#      BUFGP                       : 2
+# IO Buffers                       : 38
+#      IBUF                        : 33
+#      OBUF                        : 5
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a100tcsg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             123  out of  126800     0%  
+ Number of Slice LUTs:                  141  out of  63400     0%  
+    Number used as Logic:               141  out of  63400     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    197
+   Number with an unused Flip Flop:      74  out of    197    37%  
+   Number with an unused LUT:            56  out of    197    28%  
+   Number of fully used LUT-FF pairs:    67  out of    197    34%  
+   Number of unique control sets:       102
+
+IO Utilization: 
+ Number of IOs:                          40
+ Number of bonded IOBs:                  40  out of    210    19%  
+    IOB Flip Flops/Latches:               3
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                1  out of    135     0%  
+    Number using Block RAM only:          1
+ Number of BUFG/BUFGCTRLs:                3  out of     32     9%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-------------------------------------------------------------+--------------------------+-------+
+Clock Signal                                                 | Clock buffer(FF name)    | Load  |
+-------------------------------------------------------------+--------------------------+-------+
+i2s/f/clko                                                   | BUFG                     | 69    |
+busy_INV_49_o(busy_INV_49_o1:O)                              | NONE(*)(mem/p_out_6)     | 8     |
+load                                                         | BUFGP                    | 8     |
+i2s/s/tmp_0_C_0                                              | NONE(mem/full)           | 2     |
+clk                                                          | BUFGP                    | 9     |
+i2s/s/load_data[31]_AND_1_o(i2s/s/load_data[31]_AND_1_o1:O)  | NONE(*)(i2s/s/tmp_31_LDC)| 1     |
+i2s/s/load_data[30]_AND_3_o(i2s/s/load_data[30]_AND_3_o1:O)  | NONE(*)(i2s/s/tmp_30_LDC)| 1     |
+i2s/s/load_data[29]_AND_5_o(i2s/s/load_data[29]_AND_5_o1:O)  | NONE(*)(i2s/s/tmp_29_LDC)| 1     |
+i2s/s/load_data[28]_AND_7_o(i2s/s/load_data[28]_AND_7_o1:O)  | NONE(*)(i2s/s/tmp_28_LDC)| 1     |
+i2s/s/load_data[27]_AND_9_o(i2s/s/load_data[27]_AND_9_o1:O)  | NONE(*)(i2s/s/tmp_27_LDC)| 1     |
+i2s/s/load_data[26]_AND_11_o(i2s/s/load_data[26]_AND_11_o1:O)| NONE(*)(i2s/s/tmp_26_LDC)| 1     |
+i2s/s/load_data[25]_AND_13_o(i2s/s/load_data[25]_AND_13_o1:O)| NONE(*)(i2s/s/tmp_25_LDC)| 1     |
+i2s/s/load_data[24]_AND_15_o(i2s/s/load_data[24]_AND_15_o1:O)| NONE(*)(i2s/s/tmp_24_LDC)| 1     |
+i2s/s/load_data[23]_AND_17_o(i2s/s/load_data[23]_AND_17_o1:O)| NONE(*)(i2s/s/tmp_23_LDC)| 1     |
+i2s/s/load_data[22]_AND_19_o(i2s/s/load_data[22]_AND_19_o1:O)| NONE(*)(i2s/s/tmp_22_LDC)| 1     |
+i2s/s/load_data[21]_AND_21_o(i2s/s/load_data[21]_AND_21_o1:O)| NONE(*)(i2s/s/tmp_21_LDC)| 1     |
+i2s/s/load_data[20]_AND_23_o(i2s/s/load_data[20]_AND_23_o1:O)| NONE(*)(i2s/s/tmp_20_LDC)| 1     |
+i2s/s/load_data[19]_AND_25_o(i2s/s/load_data[19]_AND_25_o1:O)| NONE(*)(i2s/s/tmp_19_LDC)| 1     |
+i2s/s/load_data[18]_AND_27_o(i2s/s/load_data[18]_AND_27_o1:O)| NONE(*)(i2s/s/tmp_18_LDC)| 1     |
+i2s/s/load_data[17]_AND_29_o(i2s/s/load_data[17]_AND_29_o1:O)| NONE(*)(i2s/s/tmp_17_LDC)| 1     |
+i2s/s/load_data[16]_AND_31_o(i2s/s/load_data[16]_AND_31_o1:O)| NONE(*)(i2s/s/tmp_16_LDC)| 1     |
+i2s/s/load_data[15]_AND_33_o(i2s/s/load_data[15]_AND_33_o1:O)| NONE(*)(i2s/s/tmp_15_LDC)| 1     |
+i2s/s/load_data[14]_AND_35_o(i2s/s/load_data[14]_AND_35_o1:O)| NONE(*)(i2s/s/tmp_14_LDC)| 1     |
+i2s/s/load_data[13]_AND_37_o(i2s/s/load_data[13]_AND_37_o1:O)| NONE(*)(i2s/s/tmp_13_LDC)| 1     |
+i2s/s/load_data[12]_AND_39_o(i2s/s/load_data[12]_AND_39_o1:O)| NONE(*)(i2s/s/tmp_12_LDC)| 1     |
+i2s/s/load_data[11]_AND_41_o(i2s/s/load_data[11]_AND_41_o1:O)| NONE(*)(i2s/s/tmp_11_LDC)| 1     |
+i2s/s/load_data[10]_AND_43_o(i2s/s/load_data[10]_AND_43_o1:O)| NONE(*)(i2s/s/tmp_10_LDC)| 1     |
+i2s/s/load_data[9]_AND_45_o(i2s/s/load_data[9]_AND_45_o1:O)  | NONE(*)(i2s/s/tmp_9_LDC) | 1     |
+i2s/s/load_data[8]_AND_47_o(i2s/s/load_data[8]_AND_47_o1:O)  | NONE(*)(i2s/s/tmp_8_LDC) | 1     |
+i2s/s/load_data[7]_AND_49_o(i2s/s/load_data[7]_AND_49_o1:O)  | NONE(*)(i2s/s/tmp_7_LDC) | 1     |
+i2s/s/load_data[6]_AND_51_o(i2s/s/load_data[6]_AND_51_o1:O)  | NONE(*)(i2s/s/tmp_6_LDC) | 1     |
+i2s/s/load_data[5]_AND_53_o(i2s/s/load_data[5]_AND_53_o1:O)  | NONE(*)(i2s/s/tmp_5_LDC) | 1     |
+i2s/s/load_data[4]_AND_55_o(i2s/s/load_data[4]_AND_55_o1:O)  | NONE(*)(i2s/s/tmp_4_LDC) | 1     |
+i2s/s/load_data[3]_AND_57_o(i2s/s/load_data[3]_AND_57_o1:O)  | NONE(*)(i2s/s/tmp_3_LDC) | 1     |
+i2s/s/load_data[2]_AND_59_o(i2s/s/load_data[2]_AND_59_o1:O)  | NONE(*)(i2s/s/tmp_2_LDC) | 1     |
+i2s/s/load_data[1]_AND_61_o(i2s/s/load_data[1]_AND_61_o1:O)  | NONE(*)(i2s/s/tmp_1_LDC) | 1     |
+i2s/s/load_data[0]_AND_63_o(i2s/s/load_data[0]_AND_63_o1:O)  | NONE(*)(i2s/s/tmp_0_LDC) | 1     |
+-------------------------------------------------------------+--------------------------+-------+
+(*) These 33 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 2.428ns (Maximum Frequency: 411.811MHz)
+   Minimum input arrival time before clock: 2.452ns
+   Maximum output required time after clock: 2.251ns
+   Maximum combinational path delay: 0.764ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'i2s/f/clko'
+  Clock period: 1.938ns (frequency: 516.066MHz)
+  Total number of paths / destination ports: 487 / 137
+-------------------------------------------------------------------------
+Delay:               1.938ns (Levels of Logic = 1)
+  Source:            i2s/co/num_3 (FF)
+  Destination:       i2s/co/num_0 (FF)
+  Source Clock:      i2s/f/clko falling
+  Destination Clock: i2s/f/clko falling
+
+  Data Path: i2s/co/num_3 to i2s/co/num_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDS:C->Q             67   0.361   0.795  i2s/co/num_3 (i2s/co/num_3)
+     LUT5:I0->O           13   0.097   0.335  busy_INV_49_o1 (busy_INV_49_o)
+     FDS:S                     0.349          i2s/co/num_0
+    ----------------------------------------
+    Total                      1.938ns (0.807ns logic, 1.131ns route)
+                                       (41.6% logic, 58.4% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'busy_INV_49_o'
+  Clock period: 1.937ns (frequency: 516.236MHz)
+  Total number of paths / destination ports: 62 / 14
+-------------------------------------------------------------------------
+Delay:               1.937ns (Levels of Logic = 3)
+  Source:            mem/p_out_1 (FF)
+  Destination:       mem/p_out_6 (FF)
+  Source Clock:      busy_INV_49_o rising
+  Destination Clock: busy_INV_49_o rising
+
+  Data Path: mem/p_out_1 to mem/p_out_6
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              8   0.361   0.411  mem/p_out_1 (mem/p_out_1)
+     LUT2:I0->O            2   0.097   0.299  mem/GND_8_o_GND_8_o_equal_9_o<6>_SW0 (N2)
+     LUT6:I5->O            3   0.097   0.566  mem/GND_8_o_GND_8_o_equal_9_o<6> (mem/GND_8_o_GND_8_o_equal_9_o)
+     LUT4:I0->O            1   0.097   0.000  mem/Mcount_p_out_xor<2>11 (mem/Mcount_p_out2)
+     FDC:D                     0.008          mem/p_out_2
+    ----------------------------------------
+    Total                      1.937ns (0.660ns logic, 1.277ns route)
+                                       (34.1% logic, 65.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'load'
+  Clock period: 2.065ns (frequency: 484.262MHz)
+  Total number of paths / destination ports: 69 / 14
+-------------------------------------------------------------------------
+Delay:               2.065ns (Levels of Logic = 3)
+  Source:            mem/p_in_4 (FF)
+  Destination:       mem/p_in_4 (FF)
+  Source Clock:      load rising
+  Destination Clock: load rising
+
+  Data Path: mem/p_in_4 to mem/p_in_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             5   0.361   0.398  mem/p_in_4 (mem/p_in_4)
+     LUT2:I0->O            2   0.097   0.299  mem/GND_8_o_GND_8_o_equal_4_o<6>_SW0 (N01)
+     LUT6:I5->O            4   0.097   0.707  mem/GND_8_o_GND_8_o_equal_4_o<6> (mem/GND_8_o_GND_8_o_equal_4_o)
+     LUT6:I0->O            1   0.097   0.000  mem/Mmux_p_in[6]_GND_8_o_mux_4_OUT51 (mem/p_in[6]_GND_8_o_mux_4_OUT<4>)
+     FDCE:D                    0.008          mem/p_in_4
+    ----------------------------------------
+    Total                      2.065ns (0.660ns logic, 1.405ns route)
+                                       (32.0% logic, 68.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 2.428ns (frequency: 411.811MHz)
+  Total number of paths / destination ports: 219 / 15
+-------------------------------------------------------------------------
+Delay:               2.428ns (Levels of Logic = 2)
+  Source:            i2s/f/count_2 (FF)
+  Destination:       i2s/f/count_4 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: i2s/f/count_2 to i2s/f/count_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             4   0.361   0.525  i2s/f/count_2 (i2s/f/count_2)
+     LUT3:I0->O            2   0.097   0.688  i2s/f/Result<2>1 (i2s/f/Result<2>)
+     LUT6:I1->O            8   0.097   0.311  i2s/f/_n0021 (i2s/f/_n0021)
+     FDRE:R                    0.349          i2s/f/count_0
+    ----------------------------------------
+    Total                      2.428ns (0.904ns logic, 1.524ns route)
+                                       (37.2% logic, 62.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'busy_INV_49_o'
+  Total number of paths / destination ports: 24 / 24
+-------------------------------------------------------------------------
+Offset:              1.108ns (Levels of Logic = 2)
+  Source:            rst (PAD)
+  Destination:       mem/Mram_fifo (RAM)
+  Destination Clock: busy_INV_49_o rising
+
+  Data Path: rst to mem/Mram_fifo
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            20   0.001   0.367  rst_IBUF (rst_IBUF)
+     INV:I->O              1   0.113   0.279  mem/rst_inv_INV_0 (mem/rst_inv)
+     RAMB18E1:ENARDEN          0.348          mem/Mram_fifo
+    ----------------------------------------
+    Total                      1.108ns (0.462ns logic, 0.646ns route)
+                                       (41.7% logic, 58.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'load'
+  Total number of paths / destination ports: 27 / 27
+-------------------------------------------------------------------------
+Offset:              1.002ns (Levels of Logic = 2)
+  Source:            rst (PAD)
+  Destination:       mem/Mram_fifo (RAM)
+  Destination Clock: load rising
+
+  Data Path: rst to mem/Mram_fifo
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            20   0.001   0.467  rst_IBUF (rst_IBUF)
+     LUT2:I0->O            0   0.097   0.000  mem/Mmux_BUS_000111 (mem/BUS_0001)
+     RAMB18E1:WEBWE0           0.437          mem/Mram_fifo
+    ----------------------------------------
+    Total                      1.002ns (0.535ns logic, 0.467ns route)
+                                       (53.4% logic, 46.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'i2s/s/tmp_0_C_0'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              0.717ns (Levels of Logic = 1)
+  Source:            rst (PAD)
+  Destination:       mem/full (LATCH)
+  Destination Clock: i2s/s/tmp_0_C_0 falling
+
+  Data Path: rst to mem/full
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            20   0.001   0.367  rst_IBUF (rst_IBUF)
+     LDC:CLR                   0.349          mem/full
+    ----------------------------------------
+    Total                      0.717ns (0.350ns logic, 0.367ns route)
+                                       (48.8% logic, 51.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 16 / 15
+-------------------------------------------------------------------------
+Offset:              2.452ns (Levels of Logic = 4)
+  Source:            rst (PAD)
+  Destination:       i2s/f/count_4 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rst to i2s/f/count_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            20   0.001   0.383  rst_IBUF (rst_IBUF)
+     LUT5:I4->O            2   0.097   0.561  mem/Mmux_empty13 (empty_OBUF)
+     LUT4:I0->O            1   0.097   0.556  i2s/f/_n0021_SW1 (N6)
+     LUT6:I2->O            8   0.097   0.311  i2s/f/_n0021 (i2s/f/_n0021)
+     FDRE:R                    0.349          i2s/f/count_0
+    ----------------------------------------
+    Total                      2.452ns (0.641ns logic, 1.811ns route)
+                                       (26.1% logic, 73.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'load'
+  Total number of paths / destination ports: 7 / 1
+-------------------------------------------------------------------------
+Offset:              2.251ns (Levels of Logic = 3)
+  Source:            mem/p_in_1 (FF)
+  Destination:       empty (PAD)
+  Source Clock:      load rising
+
+  Data Path: mem/p_in_1 to empty
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             8   0.361   0.725  mem/p_in_1 (mem/p_in_1)
+     LUT6:I0->O            2   0.097   0.688  mem/Mmux_empty11 (mem/Mmux_empty1)
+     LUT5:I0->O            2   0.097   0.283  mem/Mmux_empty13 (empty_OBUF)
+     OBUF:I->O                 0.000          empty_OBUF (empty)
+    ----------------------------------------
+    Total                      2.251ns (0.555ns logic, 1.696ns route)
+                                       (24.7% logic, 75.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'busy_INV_49_o'
+  Total number of paths / destination ports: 7 / 1
+-------------------------------------------------------------------------
+Offset:              2.241ns (Levels of Logic = 3)
+  Source:            mem/p_out_1 (FF)
+  Destination:       empty (PAD)
+  Source Clock:      busy_INV_49_o rising
+
+  Data Path: mem/p_out_1 to empty
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              8   0.361   0.715  mem/p_out_1 (mem/p_out_1)
+     LUT6:I1->O            2   0.097   0.688  mem/Mmux_empty11 (mem/Mmux_empty1)
+     LUT5:I0->O            2   0.097   0.283  mem/Mmux_empty13 (empty_OBUF)
+     OBUF:I->O                 0.000          empty_OBUF (empty)
+    ----------------------------------------
+    Total                      2.241ns (0.555ns logic, 1.686ns route)
+                                       (24.8% logic, 75.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'i2s/s/tmp_0_C_0'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              0.751ns (Levels of Logic = 1)
+  Source:            mem/full_1 (LATCH)
+  Destination:       full (PAD)
+  Source Clock:      i2s/s/tmp_0_C_0 falling
+
+  Data Path: mem/full_1 to full
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              1   0.472   0.279  mem/full_1 (mem/full_1)
+     OBUF:I->O                 0.000          full_OBUF (full)
+    ----------------------------------------
+    Total                      0.751ns (0.472ns logic, 0.279ns route)
+                                       (62.8% logic, 37.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'i2s/s/load_data[31]_AND_1_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.360ns (Levels of Logic = 2)
+  Source:            i2s/s/tmp_31_LDC (LATCH)
+  Destination:       SD (PAD)
+  Source Clock:      i2s/s/load_data[31]_AND_1_o falling
+
+  Data Path: i2s/s/tmp_31_LDC to SD
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              1   0.472   0.511  i2s/s/tmp_31_LDC (i2s/s/tmp_31_LDC)
+     LUT3:I0->O            1   0.097   0.279  i2s/s/tmp_311 (i2s/s/tmp_31)
+     OBUF:I->O                 0.000          SD_OBUF (SD)
+    ----------------------------------------
+    Total                      1.360ns (0.569ns logic, 0.791ns route)
+                                       (41.9% logic, 58.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'i2s/f/clko'
+  Total number of paths / destination ports: 3 / 2
+-------------------------------------------------------------------------
+Offset:              1.120ns (Levels of Logic = 2)
+  Source:            i2s/s/tmp_31_C_31 (FF)
+  Destination:       SD (PAD)
+  Source Clock:      i2s/f/clko falling
+
+  Data Path: i2s/s/tmp_31_C_31 to SD
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC_1:C->Q            1   0.364   0.379  i2s/s/tmp_31_C_31 (i2s/s/tmp_31_C_31)
+     LUT3:I1->O            1   0.097   0.279  i2s/s/tmp_311 (i2s/s/tmp_31)
+     OBUF:I->O                 0.000          SD_OBUF (SD)
+    ----------------------------------------
+    Total                      1.120ns (0.461ns logic, 0.659ns route)
+                                       (41.2% logic, 58.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              0.640ns (Levels of Logic = 1)
+  Source:            i2s/f/clko_1 (FF)
+  Destination:       SCK (PAD)
+  Source Clock:      clk rising
+
+  Data Path: i2s/f/clko_1 to SCK
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.361   0.279  i2s/f/clko_1 (i2s/f/clko_1)
+     OBUF:I->O                 0.000          SCK_OBUF (SCK)
+    ----------------------------------------
+    Total                      0.640ns (0.361ns logic, 0.279ns route)
+                                       (56.4% logic, 43.6% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               0.764ns (Levels of Logic = 3)
+  Source:            rst (PAD)
+  Destination:       empty (PAD)
+
+  Data Path: rst to empty
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            20   0.001   0.383  rst_IBUF (rst_IBUF)
+     LUT5:I4->O            2   0.097   0.283  mem/Mmux_empty13 (empty_OBUF)
+     OBUF:I->O                 0.000          empty_OBUF (empty)
+    ----------------------------------------
+    Total                      0.764ns (0.098ns logic, 0.666ns route)
+                                       (12.8% logic, 87.2% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock busy_INV_49_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |    1.937|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |    3.929|         |         |         |
+clk            |    2.428|         |         |         |
+load           |    3.939|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/f/clko
+----------------------------+---------+---------+---------+---------+
+                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------------+---------+---------+---------+---------+
+busy_INV_49_o               |         |         |    3.273|         |
+i2s/f/clko                  |         |         |    1.938|         |
+i2s/s/load_data[0]_AND_63_o |         |         |    1.088|         |
+i2s/s/load_data[10]_AND_43_o|         |         |    1.088|         |
+i2s/s/load_data[11]_AND_41_o|         |         |    1.088|         |
+i2s/s/load_data[12]_AND_39_o|         |         |    1.088|         |
+i2s/s/load_data[13]_AND_37_o|         |         |    1.088|         |
+i2s/s/load_data[14]_AND_35_o|         |         |    1.088|         |
+i2s/s/load_data[15]_AND_33_o|         |         |    1.088|         |
+i2s/s/load_data[16]_AND_31_o|         |         |    1.088|         |
+i2s/s/load_data[17]_AND_29_o|         |         |    1.088|         |
+i2s/s/load_data[18]_AND_27_o|         |         |    1.088|         |
+i2s/s/load_data[19]_AND_25_o|         |         |    1.088|         |
+i2s/s/load_data[1]_AND_61_o |         |         |    1.088|         |
+i2s/s/load_data[20]_AND_23_o|         |         |    1.088|         |
+i2s/s/load_data[21]_AND_21_o|         |         |    1.088|         |
+i2s/s/load_data[22]_AND_19_o|         |         |    1.088|         |
+i2s/s/load_data[23]_AND_17_o|         |         |    1.088|         |
+i2s/s/load_data[24]_AND_15_o|         |         |    1.088|         |
+i2s/s/load_data[25]_AND_13_o|         |         |    1.088|         |
+i2s/s/load_data[26]_AND_11_o|         |         |    1.088|         |
+i2s/s/load_data[27]_AND_9_o |         |         |    1.088|         |
+i2s/s/load_data[28]_AND_7_o |         |         |    1.088|         |
+i2s/s/load_data[29]_AND_5_o |         |         |    1.088|         |
+i2s/s/load_data[2]_AND_59_o |         |         |    1.088|         |
+i2s/s/load_data[30]_AND_3_o |         |         |    1.088|         |
+i2s/s/load_data[3]_AND_57_o |         |         |    1.088|         |
+i2s/s/load_data[4]_AND_55_o |         |         |    1.088|         |
+i2s/s/load_data[5]_AND_53_o |         |         |    1.088|         |
+i2s/s/load_data[6]_AND_51_o |         |         |    1.088|         |
+i2s/s/load_data[7]_AND_49_o |         |         |    1.088|         |
+i2s/s/load_data[8]_AND_47_o |         |         |    1.088|         |
+i2s/s/load_data[9]_AND_45_o |         |         |    1.088|         |
+----------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[0]_AND_63_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.871|         |
+i2s/f/clko     |         |         |    1.892|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[10]_AND_43_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[11]_AND_41_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[12]_AND_39_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[13]_AND_37_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[14]_AND_35_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[15]_AND_33_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[16]_AND_31_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[17]_AND_29_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[18]_AND_27_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[19]_AND_25_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[1]_AND_61_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[20]_AND_23_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[21]_AND_21_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[22]_AND_19_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[23]_AND_17_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[24]_AND_15_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[25]_AND_13_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[26]_AND_11_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[27]_AND_9_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[28]_AND_7_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[29]_AND_5_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[2]_AND_59_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[30]_AND_3_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[31]_AND_1_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[3]_AND_57_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[4]_AND_55_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[5]_AND_53_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[6]_AND_51_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[7]_AND_49_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[8]_AND_47_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2s/s/load_data[9]_AND_45_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+busy_INV_49_o  |         |         |    2.875|         |
+i2s/f/clko     |         |         |    1.896|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock load
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+i2s/s/tmp_0_C_0|         |    1.306|         |         |
+load           |    2.065|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 33.00 secs
+Total CPU time to Xst completion: 31.96 secs
+ 
+--> 
+
+
+Total memory usage is 698576 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    9 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+

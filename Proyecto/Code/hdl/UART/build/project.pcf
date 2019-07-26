@@ -1,0 +1,30 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Thu Jul 25 20:11:26 2019
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "data_rx<7>" LOCATE = SITE "T6" LEVEL 1;
+COMP "ready" LOCATE = SITE "T8" LEVEL 1;
+COMP "clk" LOCATE = SITE "E3" LEVEL 1;
+COMP "data_tx<0>" LOCATE = SITE "U2" LEVEL 1;
+COMP "data_tx<1>" LOCATE = SITE "V2" LEVEL 1;
+COMP "data_tx<2>" LOCATE = SITE "U4" LEVEL 1;
+COMP "data_tx<3>" LOCATE = SITE "V5" LEVEL 1;
+COMP "data_tx<4>" LOCATE = SITE "V6" LEVEL 1;
+COMP "data_tx<5>" LOCATE = SITE "V7" LEVEL 1;
+COMP "data_tx<6>" LOCATE = SITE "R5" LEVEL 1;
+COMP "data_tx<7>" LOCATE = SITE "R6" LEVEL 1;
+COMP "rx" LOCATE = SITE "C4" LEVEL 1;
+COMP "tx" LOCATE = SITE "D4" LEVEL 1;
+COMP "rcv" LOCATE = SITE "V9" LEVEL 1;
+COMP "start" LOCATE = SITE "U8" LEVEL 1;
+COMP "data_rx<0>" LOCATE = SITE "V1" LEVEL 1;
+COMP "data_rx<1>" LOCATE = SITE "U3" LEVEL 1;
+COMP "data_rx<2>" LOCATE = SITE "V4" LEVEL 1;
+COMP "data_rx<3>" LOCATE = SITE "U6" LEVEL 1;
+COMP "data_rx<4>" LOCATE = SITE "U7" LEVEL 1;
+COMP "data_rx<5>" LOCATE = SITE "T4" LEVEL 1;
+COMP "rstn" LOCATE = SITE "U9" LEVEL 1;
+COMP "data_rx<6>" LOCATE = SITE "T5" LEVEL 1;
+SCHEMATIC END;
+

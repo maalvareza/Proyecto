@@ -1,0 +1,492 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "project.src"
+Input Format                       : mixed
+
+---- Target Parameters
+Target Device                      : xc7a100t-3csg324
+Output File Name                   : "project.ngc"
+Output Format                      : NGC
+
+---- Source Options
+Top Module Name                    : UART
+
+---- General Options
+Optimization Goal                  : Area
+Optimization Effort                : 1
+RTL Output                         : yes
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/UART/UART.v" into library work
+Parsing module <UART>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/UART/baudgen.v" into library work
+Parsing verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/UART/baudgen.vh" included at line 2.
+Parsing module <baudgen>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/UART/uart_tx.v" into library work
+Parsing verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/UART/baudgen.vh" included at line 6.
+Parsing module <uart_tx>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/UART/baudgen_rx.v" into library work
+Parsing verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/UART/baudgen.vh" included at line 2.
+Parsing module <baudgen_rx>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/UART/uart_rx.v" into library work
+Parsing verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/UART/baudgen.vh" included at line 4.
+Parsing module <uart_rx>.
+Analyzing Verilog file "/home/cychitivav/Downloads/Digital/Code/hdl/UART/baudgen.vh" into library work
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <UART>.
+
+Elaborating module <uart_tx>.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/UART/uart_tx.v" Line 81: Result of 5-bit expression is truncated to fit in 4-bit target.
+
+Elaborating module <baudgen(M=10417)>.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/UART/baudgen.v" Line 31: Result of 32-bit expression is truncated to fit in 14-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/UART/baudgen.v" Line 39: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/UART/uart_tx.v" Line 149: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/UART/uart_tx.v" Line 150: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/UART/uart_tx.v" Line 154: Result of 32-bit expression is truncated to fit in 1-bit target.
+
+Elaborating module <uart_rx>.
+
+Elaborating module <baudgen_rx(M=10417)>.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/UART/baudgen_rx.v" Line 34: Result of 32-bit expression is truncated to fit in 14-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/UART/baudgen_rx.v" Line 42: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/UART/uart_rx.v" Line 52: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/UART/uart_rx.v" Line 120: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/UART/uart_rx.v" Line 121: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/UART/uart_rx.v" Line 122: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "/home/cychitivav/Downloads/Digital/Code/hdl/UART/uart_rx.v" Line 123: Result of 32-bit expression is truncated to fit in 1-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <UART>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/UART/UART.v".
+    Summary:
+	no macro.
+Unit <UART> synthesized.
+
+Synthesizing Unit <uart_tx>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/UART/uart_tx.v".
+        BAUD = 10417
+    Found 8-bit register for signal <data_r>.
+    Found 10-bit register for signal <shifter>.
+    Found 4-bit register for signal <bitc>.
+    Found 1-bit register for signal <tx>.
+    Found 2-bit register for signal <state>.
+    Found 1-bit register for signal <start_r>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rstn (positive)                                |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 4-bit adder for signal <bitc[3]_GND_2_o_add_19_OUT> created at line 81.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  24 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <uart_tx> synthesized.
+
+Synthesizing Unit <baudgen>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/UART/baudgen.v".
+        M = 10417
+    Found 14-bit register for signal <divcounter>.
+    Found 15-bit adder for signal <n0017[14:0]> created at line 31.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  14 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
+Unit <baudgen> synthesized.
+
+Synthesizing Unit <uart_rx>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/UART/uart_rx.v".
+        BAUD = 10417
+    Found 4-bit register for signal <bitc>.
+    Found 10-bit register for signal <raw_data>.
+    Found 8-bit register for signal <data>.
+    Found 2-bit register for signal <state>.
+    Found 1-bit register for signal <rx_r>.
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rstn (positive)                                |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 4-bit adder for signal <bitc[3]_GND_4_o_add_4_OUT> created at line 52.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  23 D-type flip-flop(s).
+	inferred   1 Finite State Machine(s).
+Unit <uart_rx> synthesized.
+
+Synthesizing Unit <baudgen_rx>.
+    Related source file is "/home/cychitivav/Downloads/Digital/Code/hdl/UART/baudgen_rx.v".
+        M = 10417
+    Found 14-bit register for signal <divcounter>.
+    Found 15-bit adder for signal <n0017[14:0]> created at line 34.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  14 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
+Unit <baudgen_rx> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 4
+ 15-bit adder                                          : 2
+ 4-bit adder                                           : 2
+# Registers                                            : 11
+ 1-bit register                                        : 3
+ 10-bit register                                       : 2
+ 14-bit register                                       : 2
+ 4-bit register                                        : 2
+ 8-bit register                                        : 2
+# Multiplexers                                         : 7
+ 10-bit 2-to-1 multiplexer                             : 1
+ 14-bit 2-to-1 multiplexer                             : 2
+ 32-bit 2-to-1 multiplexer                             : 4
+# FSMs                                                 : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:2677 - Node <raw_data_0> of sequential type is unconnected in block <RX>.
+
+Synthesizing (advanced) Unit <uart_rx>.
+The following registers are absorbed into counter <bitc>: 1 register on signal <bitc>.
+Unit <uart_rx> synthesized (advanced).
+
+Synthesizing (advanced) Unit <uart_tx>.
+The following registers are absorbed into counter <bitc>: 1 register on signal <bitc>.
+Unit <uart_tx> synthesized (advanced).
+WARNING:Xst:2677 - Node <raw_data_0> of sequential type is unconnected in block <uart_rx>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 15-bit adder                                          : 2
+# Counters                                             : 2
+ 4-bit up counter                                      : 2
+# Registers                                            : 66
+ Flip-Flops                                            : 66
+# Multiplexers                                         : 7
+ 10-bit 2-to-1 multiplexer                             : 1
+ 14-bit 2-to-1 multiplexer                             : 2
+ 32-bit 2-to-1 multiplexer                             : 4
+# FSMs                                                 : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <TX/FSM_0> on signal <state[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 11
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <RX/FSM_1> on signal <state[1:4]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 0001
+ 01    | 0010
+ 10    | 0100
+ 11    | 1000
+-------------------
+
+Optimizing unit <UART> ...
+
+Optimizing unit <uart_tx> ...
+
+Optimizing unit <baudgen> ...
+
+Optimizing unit <uart_rx> ...
+
+Optimizing unit <baudgen_rx> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block UART, actual ratio is 0.
+FlipFlop RX/state_FSM_FFd1 has been replicated 1 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 81
+ Flip-Flops                                            : 81
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : project.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 156
+#      GND                         : 1
+#      INV                         : 5
+#      LUT1                        : 26
+#      LUT2                        : 6
+#      LUT3                        : 36
+#      LUT4                        : 11
+#      LUT5                        : 5
+#      LUT6                        : 11
+#      MUXCY                       : 26
+#      VCC                         : 1
+#      XORCY                       : 28
+# FlipFlops/Latches                : 81
+#      FD                          : 32
+#      FDE                         : 17
+#      FDR                         : 5
+#      FDRE                        : 16
+#      FDS                         : 4
+#      FDSE                        : 7
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 22
+#      IBUF                        : 11
+#      OBUF                        : 11
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a100tcsg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              62  out of  126800     0%  
+ Number of Slice LUTs:                  100  out of  63400     0%  
+    Number used as Logic:               100  out of  63400     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    106
+   Number with an unused Flip Flop:      44  out of    106    41%  
+   Number with an unused LUT:             6  out of    106     5%  
+   Number of fully used LUT-FF pairs:    56  out of    106    52%  
+   Number of unique control sets:         8
+
+IO Utilization: 
+ Number of IOs:                          23
+ Number of bonded IOBs:                  23  out of    210    10%  
+    IOB Flip Flops/Latches:              19
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 81    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 2.634ns (Maximum Frequency: 379.636MHz)
+   Minimum input arrival time before clock: 0.905ns
+   Maximum output required time after clock: 1.140ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 2.634ns (frequency: 379.636MHz)
+  Total number of paths / destination ports: 1201 / 119
+-------------------------------------------------------------------------
+Delay:               2.634ns (Levels of Logic = 4)
+  Source:            TX/BAUD0/divcounter_9 (FF)
+  Destination:       TX/shifter_8 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: TX/BAUD0/divcounter_9 to TX/shifter_8
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.361   0.560  TX/BAUD0/divcounter_9 (TX/BAUD0/divcounter_9)
+     LUT4:I0->O            1   0.097   0.295  TX/BAUD0/GND_3_o_GND_3_o_equal_2_o<13>1_SW0 (N4)
+     LUT6:I5->O            2   0.097   0.299  TX/BAUD0/GND_3_o_GND_3_o_equal_2_o<13>1 (TX/BAUD0/GND_3_o_GND_3_o_equal_2_o<13>1)
+     LUT6:I5->O            8   0.097   0.327  TX/BAUD0/Mmux_n00111 (TX/clk_baud)
+     LUT3:I2->O            7   0.097   0.307  TX/_n0109_inv1 (TX/_n0109_inv)
+     FDSE:CE                   0.095          TX/shifter_2
+    ----------------------------------------
+    Total                      2.634ns (0.844ns logic, 1.790ns route)
+                                       (32.0% logic, 68.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 43 / 43
+-------------------------------------------------------------------------
+Offset:              0.905ns (Levels of Logic = 2)
+  Source:            rstn (PAD)
+  Destination:       RX/state_FSM_FFd2 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rstn to RX/state_FSM_FFd2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            25   0.001   0.799  rstn_IBUF (rstn_IBUF)
+     LUT6:I0->O            1   0.097   0.000  RX/state_FSM_FFd2_rstpot (RX/state_FSM_FFd2_rstpot)
+     FD:D                      0.008          RX/state_FSM_FFd2
+    ----------------------------------------
+    Total                      0.905ns (0.106ns logic, 0.799ns route)
+                                       (11.7% logic, 88.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 11 / 11
+-------------------------------------------------------------------------
+Offset:              1.140ns (Levels of Logic = 2)
+  Source:            TX/state_FSM_FFd2 (FF)
+  Destination:       ready (PAD)
+  Source Clock:      clk rising
+
+  Data Path: TX/state_FSM_FFd2 to ready
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             35   0.361   0.387  TX/state_FSM_FFd2 (TX/state_FSM_FFd2)
+     INV:I->O              1   0.113   0.279  TX/state_n0047<0>1_INV_0 (ready_OBUF)
+     OBUF:I->O                 0.000          ready_OBUF (ready)
+    ----------------------------------------
+    Total                      1.140ns (0.474ns logic, 0.666ns route)
+                                       (41.6% logic, 58.4% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    2.634|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 34.00 secs
+Total CPU time to Xst completion: 32.90 secs
+ 
+--> 
+
+
+Total memory usage is 698460 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   15 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

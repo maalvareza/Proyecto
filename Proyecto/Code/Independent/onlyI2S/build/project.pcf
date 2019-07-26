@@ -1,0 +1,51 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Fri Jul 26 10:47:06 2019
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "data<0>" LOCATE = SITE "E17" LEVEL 1;
+COMP "data<1>" LOCATE = SITE "G13" LEVEL 1;
+COMP "clk" LOCATE = SITE "E3" LEVEL 1;
+COMP "data<2>" LOCATE = SITE "C17" LEVEL 1;
+COMP "data<3>" LOCATE = SITE "D18" LEVEL 1;
+COMP "data<4>" LOCATE = SITE "E18" LEVEL 1;
+COMP "data<5>" LOCATE = SITE "G14" LEVEL 1;
+COMP "data<6>" LOCATE = SITE "P15" LEVEL 1;
+COMP "data<7>" LOCATE = SITE "V11" LEVEL 1;
+COMP "data<8>" LOCATE = SITE "V15" LEVEL 1;
+COMP "data<9>" LOCATE = SITE "B13" LEVEL 1;
+COMP "SD" LOCATE = SITE "K16" LEVEL 1;
+COMP "SCK" LOCATE = SITE "R16" LEVEL 1;
+COMP "WS" LOCATE = SITE "T9" LEVEL 1;
+COMP "empty" LOCATE = SITE "T8" LEVEL 1;
+COMP "data<10>" LOCATE = SITE "F14" LEVEL 1;
+COMP "data<11>" LOCATE = SITE "D17" LEVEL 1;
+COMP "data<12>" LOCATE = SITE "U11" LEVEL 1;
+COMP "data<20>" LOCATE = SITE "G6" LEVEL 1;
+COMP "data<13>" LOCATE = SITE "K2" LEVEL 1;
+COMP "data<21>" LOCATE = SITE "H4" LEVEL 1;
+COMP "data<14>" LOCATE = SITE "E7" LEVEL 1;
+COMP "data<22>" LOCATE = SITE "H1" LEVEL 1;
+COMP "data<30>" LOCATE = SITE "A15" LEVEL 1;
+COMP "data<15>" LOCATE = SITE "J3" LEVEL 1;
+COMP "data<23>" LOCATE = SITE "G1" LEVEL 1;
+COMP "data<31>" LOCATE = SITE "B16" LEVEL 1;
+COMP "data<16>" LOCATE = SITE "J4" LEVEL 1;
+COMP "data<24>" LOCATE = SITE "G3" LEVEL 1;
+COMP "data<17>" LOCATE = SITE "K1" LEVEL 1;
+COMP "data<25>" LOCATE = SITE "H2" LEVEL 1;
+COMP "data<18>" LOCATE = SITE "E6" LEVEL 1;
+COMP "data<26>" LOCATE = SITE "G4" LEVEL 1;
+COMP "data<19>" LOCATE = SITE "J2" LEVEL 1;
+COMP "data<27>" LOCATE = SITE "G2" LEVEL 1;
+COMP "data<28>" LOCATE = SITE "F3" LEVEL 1;
+COMP "data<29>" LOCATE = SITE "A13" LEVEL 1;
+COMP "load" LOCATE = SITE "U9" LEVEL 1;
+PIN load_pin<0> = BEL "load" PINNAME PAD;
+PIN "load_pin<0>" CLOCK_DEDICATED_ROUTE = FALSE;
+COMP "full" LOCATE = SITE "R8" LEVEL 1;
+COMP "rst" LOCATE = SITE "E16" LEVEL 1;
+PIN rst_pin<0> = BEL "rst" PINNAME PAD;
+PIN "rst_pin<0>" CLOCK_DEDICATED_ROUTE = FALSE;
+SCHEMATIC END;
+

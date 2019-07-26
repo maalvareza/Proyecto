@@ -1,0 +1,24 @@
+#clock
+NET "init"  LOC = "P4" | IOSTANDARD = "LVCMOS33";
+
+NET "n<0>"  LOC = "U9" | IOSTANDARD = "LVCMOS33";
+NET "n<1>"  LOC = "U8" | IOSTANDARD = "LVCMOS33";
+NET "n<2>"  LOC = "R7" | IOSTANDARD = "LVCMOS33";
+NET "n<3>"  LOC = "R6" | IOSTANDARD = "LVCMOS33";
+
+NET "segs<0>"  LOC = "L6" | IOSTANDARD = "LVCMOS33";
+NET "segs<1>"  LOC = "M2" | IOSTANDARD = "LVCMOS33";
+NET "segs<2>"  LOC = "K3" | IOSTANDARD = "LVCMOS33";
+NET "segs<3>"  LOC = "L4" | IOSTANDARD = "LVCMOS33";
+NET "segs<4>"  LOC = "L5" | IOSTANDARD = "LVCMOS33";
+NET "segs<5>"  LOC = "N1" | IOSTANDARD = "LVCMOS33";
+NET "segs<6>"  LOC = "L3" | IOSTANDARD = "LVCMOS33";
+
+NET "anode<0>"  LOC = "N6" | IOSTANDARD = "LVCMOS33";
+NET "anode<1>"  LOC = "M6" | IOSTANDARD = "LVCMOS33";
+NET "anode<2>"  LOC = "M3" | IOSTANDARD = "LVCMOS33";
+NET "anode<3>"  LOC = "N5" | IOSTANDARD = "LVCMOS33";
+NET "anode<4>"  LOC = "N2" | IOSTANDARD = "LVCMOS33";
+NET "anode<5>"  LOC = "N4" | IOSTANDARD = "LVCMOS33";
+NET "anode<6>"  LOC = "L1" | IOSTANDARD = "LVCMOS33";
+NET "anode<7>"  LOC = "M1" | IOSTANDARD = "LVCMOS33";

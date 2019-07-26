@@ -1,0 +1,51 @@
+#Clock signal
+NET "sys_clk_i"  LOC = "E3" | IOSTANDARD = "LVCMOS33";
+NET "sys_clk_i"  TNM_NET = sys_clk_pin;
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 100 MHz HIGH 50%;
+
+#Buttons
+NET "sys_rst_i"  LOC = "R10" | IOSTANDARD = "LVCMOS33";
+
+#UART-JB
+NET "uart_tx"  LOC = "G14" | IOSTANDARD = "LVCMOS33";#1
+NET "uart_rx"  LOC = "P15" | IOSTANDARD = "LVCMOS33";#2
+
+#I2S-JB
+NET "SD"  LOC = "K16" | IOSTANDARD = "LVCMOS33";#7
+NET "SCK"  LOC = "R16" | IOSTANDARD = "LVCMOS33";#8
+NET "WS"  LOC = "T9" | IOSTANDARD = "LVCMOS33";#9
+
+#I2C(K2 E7 J3 J4 K1)-JC
+
+
+#SPI(H4 H1 G1 G3 H2 G4 G2 F3)-JD
+
+
+#BCD
+NET "segs<0>"  LOC = "L6" | IOSTANDARD = "LVCMOS33";
+NET "segs<1>"  LOC = "M2" | IOSTANDARD = "LVCMOS33";
+NET "segs<2>"  LOC = "K3" | IOSTANDARD = "LVCMOS33";
+NET "segs<3>"  LOC = "L4" | IOSTANDARD = "LVCMOS33";
+NET "segs<4>"  LOC = "L5" | IOSTANDARD = "LVCMOS33";
+NET "segs<5>"  LOC = "N1" | IOSTANDARD = "LVCMOS33";
+NET "segs<6>"  LOC = "L3" | IOSTANDARD = "LVCMOS33";
+
+NET "anode<0>"  LOC = "N6" | IOSTANDARD = "LVCMOS33";
+NET "anode<1>"  LOC = "M6" | IOSTANDARD = "LVCMOS33";
+NET "anode<2>"  LOC = "M3" | IOSTANDARD = "LVCMOS33";
+NET "anode<3>"  LOC = "N5" | IOSTANDARD = "LVCMOS33";
+NET "anode<4>"  LOC = "N2" | IOSTANDARD = "LVCMOS33";
+NET "anode<5>"  LOC = "N4" | IOSTANDARD = "LVCMOS33";
+NET "anode<6>"  LOC = "L1" | IOSTANDARD = "LVCMOS33";
+NET "anode<7>"  LOC = "M1" | IOSTANDARD = "LVCMOS33";
+
+#BOARD-JA
+NET "cols<0>"  LOC = "B13" | IOSTANDARD = "LVCMOS33";#1
+NET "cols<1>"  LOC = "F14" | IOSTANDARD = "LVCMOS33";#2
+NET "cols<2>"  LOC = "D17" | IOSTANDARD = "LVCMOS33";#3
+NET "cols<3>"  LOC = "E17" | IOSTANDARD = "LVCMOS33";#4
+
+NET "rows<0>"  LOC = "G13" | IOSTANDARD = "LVCMOS33";#7
+NET "rows<1>"  LOC = "C17" | IOSTANDARD = "LVCMOS33";#8
+NET "rows<2>"  LOC = "D18" | IOSTANDARD = "LVCMOS33";#9
+NET "rows<3>"  LOC = "E18" | IOSTANDARD = "LVCMOS33";#10

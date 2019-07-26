@@ -1,0 +1,6 @@
+verilog work ../UART.v
+verilog work ../baudgen.v
+verilog work ../uart_tx.v
+verilog work ../baudgen_rx.v
+verilog work ../uart_rx.v
+verilog work ../baudgen.vh

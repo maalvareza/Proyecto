@@ -1,0 +1,8 @@
+verilog work ../SimI2S.v
+verilog work ../comparator0.v
+verilog work ../counter.v
+verilog work ../divisor.v
+verilog work ../shift.v
+verilog work ../fifo.v
+verilog work ../comparator16.v
+verilog work ../I2S.v
